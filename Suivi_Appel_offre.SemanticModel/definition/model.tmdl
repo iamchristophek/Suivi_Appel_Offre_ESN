@@ -1,0 +1,22 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["Données"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Données
+ref table _Mesures
+ref table 'Dynamic Slicer'
+ref table 'Calendrier ouvré France'
+
+ref cultureInfo fr-FR
+

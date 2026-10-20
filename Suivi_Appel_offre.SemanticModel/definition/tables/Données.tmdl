@@ -1,0 +1,441 @@
+table Données
+	lineageTag: e597b910-6d92-4480-9681-46a7ae11b309
+
+	column DAH
+		dataType: string
+		lineageTag: b3c00018-7896-4131-9dd9-86319450ea21
+		summarizeBy: none
+		sourceColumn: DAH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column INTITULE
+		dataType: string
+		lineageTag: e6b82b18-f106-4d0e-aac1-4db0f7e0aecb
+		summarizeBy: none
+		sourceColumn: INTITULE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NIVEAU
+		dataType: int64
+		formatString: 0
+		lineageTag: de9d421b-9628-44e8-bf1f-2938d4e76ee1
+		summarizeBy: sum
+		sourceColumn: NIVEAU
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'COMPETENCES RECHERCHÉES'
+		dataType: string
+		lineageTag: 66c4bd30-bbe6-4bef-b733-5d034d9b35ce
+		summarizeBy: none
+		sourceColumn: COMPETENCES RECHERCHÉES
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LIEU DE LA PRESTATION'
+		dataType: string
+		lineageTag: ac830c26-cd0a-41ce-9cce-e3c0d341d24a
+		summarizeBy: none
+		sourceColumn: LIEU DE LA PRESTATION
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DATE D''EMISSION'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 924fabc1-147b-44f0-b652-2d284134a5fb
+		summarizeBy: none
+		sourceColumn: DATE D'EMISSION
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DATE LIMITE REPONSE'
+		dataType: string
+		lineageTag: e8651f0e-79f3-4168-899b-5322b2ebec86
+		summarizeBy: none
+		sourceColumn: DATE LIMITE REPONSE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DATE DE REPONSE'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ee43c99e-eff8-4450-8e62-a379d6a09b7b
+		summarizeBy: none
+		sourceColumn: DATE DE REPONSE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTACT
+		dataType: string
+		lineageTag: 0669c8e4-8d48-4843-a8be-2c9791766b99
+		summarizeBy: none
+		sourceColumn: CONTACT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ENTITE
+		dataType: string
+		lineageTag: 0f28f8a1-c017-471b-a597-873345d3ddca
+		summarizeBy: none
+		sourceColumn: ENTITE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LinkedIn
+		dataType: string
+		lineageTag: 04a92680-b51d-445c-baae-fe5c47427629
+		summarizeBy: none
+		sourceColumn: LinkedIn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 789b9a5a-6d29-412a-9814-24442e095735
+		summarizeBy: none
+		sourceColumn: Email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fonction
+		dataType: string
+		lineageTag: b1f387ea-5be6-48ca-9bab-819b6936363e
+		summarizeBy: none
+		sourceColumn: Fonction
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PROFIL PROPOSÉ'
+		dataType: string
+		lineageTag: 9c29076d-b613-4fcb-b1e2-96a38f07b749
+		summarizeBy: none
+		sourceColumn: PROFIL PROPOSÉ
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TJ HT/JOUR'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e470ce2-3852-4b5b-a86b-acac6f4d4d10
+		summarizeBy: sum
+		sourceColumn: TJ HT/JOUR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUT
+		dataType: string
+		lineageTag: c77f385d-47b8-4683-b49e-c5e576705726
+		summarizeBy: none
+		sourceColumn: STATUT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MOTIF
+		dataType: string
+		lineageTag: b23ea7c0-609c-4a28-80a8-09605c3fcc28
+		summarizeBy: none
+		sourceColumn: MOTIF
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fonction / Rôle'
+		dataType: string
+		lineageTag: 51e44b0d-203a-4048-8c23-b36cd50c0d45
+		summarizeBy: none
+		sourceColumn: Fonction / Rôle
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column POSTE
+		dataType: string
+		lineageTag: 951504b2-29d3-40a0-9f81-66d856315939
+		summarizeBy: none
+		sourceColumn: POSTE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Index technique par actualisation ; préserve les lignes du tableau même si tous les champs métier se répètent.
+	column 'ID ligne besoin'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f7000d93-4171-44b2-9af5-ba9ad45b7507
+		summarizeBy: none
+		sourceColumn: ID ligne besoin
+
+	column 'Date émission brute'
+		dataType: string
+		lineageTag: d8345b1a-4eb6-4800-8a65-73df547d4b6e
+		summarizeBy: none
+		sourceColumn: Date émission brute
+
+	column 'Date réponse brute'
+		dataType: string
+		lineageTag: 53032ae5-eb1b-49fc-9eb8-d0968c75a355
+		summarizeBy: none
+		sourceColumn: Date réponse brute
+
+	column 'Contrôle date émission'
+		dataType: string
+		isHidden
+		lineageTag: 468a21ff-7111-4f1b-903e-6f4c53e972e1
+		summarizeBy: none
+		sourceColumn: Contrôle date émission
+
+	column 'Contrôle date réponse'
+		dataType: string
+		isHidden
+		lineageTag: a590b83c-20db-48e2-a4e4-5368e85dec8e
+		summarizeBy: none
+		sourceColumn: Contrôle date réponse
+
+	column 'Date émission jour' =
+			VAR DateSource = 'Données'[DATE D'EMISSION]
+			RETURN IF ( ISBLANK ( DateSource ), BLANK (), DATE ( YEAR ( DateSource ), MONTH ( DateSource ), DAY ( DateSource ) ) )
+		dataType: dateTime
+		formatString: dd/MM/yyyy
+		lineageTag: 74c3e40b-a899-41b1-8b48-67e3e44b5803
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	column 'Date réponse jour' =
+			VAR DateSource = 'Données'[DATE DE REPONSE]
+			RETURN IF ( ISBLANK ( DateSource ), BLANK (), DATE ( YEAR ( DateSource ), MONTH ( DateSource ), DAY ( DateSource ) ) )
+		dataType: dateTime
+		formatString: dd/MM/yyyy
+		lineageTag: b88f95da-51ec-4137-868b-197c9d020660
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	/// Émission absente, conversion impossible, année hors plage ou réponse antérieure. Valeurs brutes conservées.
+	column 'Anomalie dates' =
+			VAR Emission = 'Données'[Date émission jour]
+			VAR Reponse = 'Données'[Date réponse jour]
+			VAR ControleEmission = 'Données'[Contrôle date émission]
+			VAR ControleReponse = 'Données'[Contrôle date réponse]
+			VAR ProblemeEmission = IF ( ControleEmission <> "Valide", "Émission : " & ControleEmission, "" )
+			VAR ProblemeReponse = IF ( NOT ( ControleReponse IN { "Valide", "Absente" } ), "Réponse : " & ControleReponse, "" )
+			VAR OrdreDates = IF ( NOT ISBLANK ( Emission ) && NOT ISBLANK ( Reponse ) && Reponse < Emission, "Réponse antérieure à l'émission", "" )
+			RETURN
+			    ProblemeEmission
+			        & IF ( ProblemeEmission <> "" && ProblemeReponse <> "", " ; ", "" ) & ProblemeReponse
+			        & IF ( ( ProblemeEmission <> "" || ProblemeReponse <> "" ) && OrdreDates <> "", " ; ", "" ) & OrdreDates
+		dataType: string
+		lineageTag: df89d0ee-0696-46fd-bf13-66cc25e99b23
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	/// J0 exclu ; réponse incluse si ouvrée ; calendrier commun hors week-ends et jours fériés nationaux français. BLANK si non évaluable.
+	column 'Délai réponse jours ouvrés' =
+			VAR Emission = 'Données'[Date émission jour]
+			VAR Reponse = 'Données'[Date réponse jour]
+			VAR Evaluable = 'Données'[Anomalie dates] = "" && NOT ISBLANK ( Emission ) && NOT ISBLANK ( Reponse ) && Reponse >= Emission
+			RETURN
+			    IF (
+			        Evaluable,
+			        COALESCE (
+			            COUNTROWS (
+			                FILTER (
+			                    ALL ( 'Calendrier ouvré France' ),
+			                    'Calendrier ouvré France'[Date] > Emission
+			                        && 'Calendrier ouvré France'[Date] <= Reponse
+			                        && 'Calendrier ouvré France'[Est jour ouvré]
+			                )
+			            ),
+			            0
+			        ),
+			        BLANK ()
+			    )
+		dataType: int64
+		formatString: 0
+		lineageTag: f64115b3-7388-4fe2-b840-f0bd668b5895
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	/// Cinquième jour ouvré du calendrier commun strictement après émission ; indépendant de la réponse.
+	column 'Échéance réponse' =
+			VAR Emission = 'Données'[Date émission jour]
+			RETURN
+			    IF (
+			        'Données'[Contrôle date émission] = "Valide" && NOT ISBLANK ( Emission ),
+			        VAR Ouvres =
+			            FILTER (
+			                ALL ( 'Calendrier ouvré France' ),
+			                'Calendrier ouvré France'[Date] > Emission
+			                    && 'Calendrier ouvré France'[Est jour ouvré]
+			            )
+			        VAR Prochains = TOPN ( 5, Ouvres, 'Calendrier ouvré France'[Date], ASC )
+			        RETURN
+			            IF ( COUNTROWS ( Prochains ) = 5, MAXX ( Prochains, 'Calendrier ouvré France'[Date] ), BLANK () ),
+			        BLANK ()
+			    )
+		dataType: dateTime
+		formatString: dd/MM/yyyy
+		lineageTag: 63840af5-6d44-4245-9b10-e1e4ea4c912c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	/// Les anomalies ont priorité sur une réponse absente ; No go reste une décision métier indépendante.
+	column 'Qualification délai' =
+			VAR Delai = 'Données'[Délai réponse jours ouvrés]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        'Données'[Anomalie dates] <> "", "Dates à vérifier",
+			        'Données'[Contrôle date réponse] = "Absente", "Sans date de réponse",
+			        ISBLANK ( Delai ), "Dates à vérifier",
+			        Delai <= 5, "Dans le délai",
+			        "Hors délai"
+			    )
+		dataType: string
+		lineageTag: a0805327-5a73-4db5-95c9-624793d4e1a4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	partition Données = m
+		mode: import
+		source = ```
+				let
+				    // 1. Chargement de la source
+				    Source = Excel.Workbook(Web.Contents("https://orange0.sharepoint.com/sites/BPCEEquipetendue/Documents%20partages/General/Digital%20Services/01%20R%C3%A9f%C3%A9rencement%20BPCE%20IT%20TECH%202025%20et%20IT%20G%C3%A9n%C3%A9raliste%202026/01%20R%C3%A9f%C3%A9rencement%20IT%20G%C3%A9n%C3%A9raliste%202026/Reporting%20KPI%20Harmoni/REPORTING_2026.xlsx"), null, true),
+				    Données_Sheet = Source{[Item="SUIVI",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(Données_Sheet, [PromoteAllScalars=true]),
+				
+				    // 2. Nettoyage de TOUS les noms de colonnes (suppression des espaces superflus au début/à la fin)
+				    #"En-têtes nettoyés" = Table.TransformColumnNames(#"En-têtes promus", Text.Trim),
+				
+				    // Contrôle explicite : années 2000 à année UTC d'actualisation + 1.
+				    AnneeMax = Date.Year(Date.From(DateTimeZone.FixedUtcNow())) + 1,
+				    AnalyseDate = (Lecture as record) as record =>
+				        let
+				            Brute = if Lecture[HasError] then "Erreur source : " & Lecture[Error][Message]
+				                    else if Lecture[Value] = null then null
+				                    else try Text.From(Lecture[Value], "fr-FR") otherwise "Valeur non textuelle",
+				            Absente = if Lecture[HasError] then false
+				                      else Lecture[Value] = null or (Value.Is(Lecture[Value], type text) and Text.Trim(Lecture[Value]) = ""),
+				            Conversion = if Lecture[HasError] then Lecture else try DateTime.From(Lecture[Value], "fr-FR"),
+				            Etat = if Absente then "Absente"
+				                   else if Conversion[HasError] then "Erreur de conversion : " & Conversion[Error][Message]
+				                   else if Date.Year(Date.From(Conversion[Value])) < 2000 or Date.Year(Date.From(Conversion[Value])) > AnneeMax
+				                        then "Année incohérente (" & Text.From(Date.Year(Date.From(Conversion[Value]))) & ")"
+				                   else "Valide",
+				            Valeur = if Etat = "Valide" then Conversion[Value] else null
+				        in [Valeur = Valeur, Brute = Brute, Etat = Etat],
+				    #"Audit émission" = Table.AddColumn(#"En-têtes nettoyés", "Audit émission", each AnalyseDate(try Record.Field(_, "DATE D'EMISSION")), type record),
+				    #"Audit réponse" = Table.AddColumn(#"Audit émission", "Audit réponse", each AnalyseDate(try Record.Field(_, "DATE DE REPONSE")), type record),
+				    #"Dates brutes retirées" = Table.RemoveColumns(#"Audit réponse", {"DATE D'EMISSION", "DATE DE REPONSE"}),
+				    #"Émission contrôlée" = Table.ExpandRecordColumn(#"Dates brutes retirées", "Audit émission", {"Valeur", "Brute", "Etat"}, {"DATE D'EMISSION", "Date émission brute", "Contrôle date émission"}),
+				    #"Réponse contrôlée" = Table.ExpandRecordColumn(#"Émission contrôlée", "Audit réponse", {"Valeur", "Brute", "Etat"}, {"DATE DE REPONSE", "Date réponse brute", "Contrôle date réponse"}),
+				
+				    // 3. Typage des colonnes
+				    #"Type modifié" = Table.TransformColumnTypes(#"Réponse contrôlée",{
+				        {"Date émission brute", type text},
+				        {"Date réponse brute", type text},
+				        {"Contrôle date émission", type text},
+				        {"Contrôle date réponse", type text},
+				        {"DAH", type text}, 
+				        {"INTITULE", type text}, 
+				        {"POSTE", type text}, 
+				        {"NIVEAU", Int64.Type}, 
+				        {"COMPETENCES RECHERCHÉES", type text}, 
+				        {"LIEU DE LA PRESTATION", type text}, 
+				        {"DATE D'EMISSION", type datetime}, 
+				        {"DATE LIMITE REPONSE", type any}, 
+				        {"DATE DE REPONSE", type datetime}, 
+				        {"CONTACT", type text}, 
+				        {"ENTITE", type text}, 
+				        {"LinkedIn", type text}, 
+				        {"Email", type text}, 
+				        {"Fonction", type text}, 
+				        {"PROFIL PROPOSÉ", type text}, 
+				        {"TJ HT/JOUR", Int64.Type}, 
+				        {"STATUT", type text}, 
+				        {"MOTIF", type text}
+				    }),
+				
+				    // 4. Filtrer les lignes (exclure Supprimé et vides)
+				    #"Lignes Filtrées" = Table.SelectRows(#"Type modifié", each ([STATUT] <> "Supprimé" and [STATUT] <> null and [STATUT] <> "")),
+				
+				    // 5. Nettoyage des textes (Entité, Lieu, Statut)
+				    #"Texte Clean" = Table.TransformColumns(#"Lignes Filtrées", {
+				        {"ENTITE", Text.Clean, type text},
+				        {"LIEU DE LA PRESTATION", Text.Clean, type text},
+				        {"STATUT", Text.Clean, type text}
+				    }),
+				    #"Texte Trim" = Table.TransformColumns(#"Texte Clean", {
+				        {"ENTITE", Text.Trim, type text},
+				        {"LIEU DE LA PRESTATION", Text.Trim, type text},
+				        {"STATUT", Text.Trim, type text}
+				    }),
+				
+				    // Extraction  de la fonction métier
+				    #"Fonction Extraite" = Table.AddColumn(#"Texte Trim", "Fonction / Rôle", each 
+				        if [POSTE] = null or [POSTE] = "" then "Non spécifié" else
+				        let 
+				            TextePropre = Text.Clean(Text.Trim([POSTE])),
+				            Items = List.Select(List.Transform(Text.Split(TextePropre, "-"), Text.Trim), each _ <> ""),
+				            NbItems = List.Count(Items)
+				        in 
+				            if NbItems >= 5 then Items{2}              // Ex: 3D22 - NICHE PLAYERS - Product Owner - IDF - 3-6 ans
+				            else if NbItems = 4 then Items{1}          // Ex: IT généraliste - Data analyst - IDF - Plus de 9ans
+				            else if NbItems = 3 then Items{1}          // Ex: IT généraliste - Devops - IDF
+				            else if NbItems = 2 then Items{1}          // Ex: IT généraliste - Data Engineer
+				            else TextePropre, type text),
+				    // Identifiant technique du besoin ; aucune déduplication de DAH.
+				    #"Identifiant ligne" = Table.AddIndexColumn(#"Fonction Extraite", "ID ligne besoin", 1, 1, Int64.Type)
+				
+				in
+				    #"Identifiant ligne"
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

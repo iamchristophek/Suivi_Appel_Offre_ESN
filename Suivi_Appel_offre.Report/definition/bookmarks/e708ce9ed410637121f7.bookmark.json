@@ -1,0 +1,709 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Reset_Delais",
+  "name": "e708ce9ed410637121f7",
+  "options": {
+    "targetVisualNames": [],
+    "suppressActiveSection": true,
+    "suppressDisplay": true,
+    "preserveNewVisualVisibility": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "d31a1500000000000001",
+    "sections": {
+      "d31a1500000000000001": {
+        "visualContainers": {
+          "d31a1500000000000001": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "d31a1500000000000002": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "d31a1500000000000003": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "b7c75c9c21f82e7c047e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "Date émission jour"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "Date émission jour"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "d31a1500000000000004": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "fe70cb60561dcdd34b04",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "LIEU DE LA PRESTATION"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "LIEU DE LA PRESTATION"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "d31a1500000000000005": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "df867f3c94ef2621e75d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "ENTITE"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "ENTITE"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "d31a1500000000000006": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f9e9c047165457b597d3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Mesures"
+                        }
+                      },
+                      "Property": "Délai moyen réponses évaluables"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "d31a1500000000000007": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e6bc3ba26157a6d83c78",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Mesures"
+                        }
+                      },
+                      "Property": "% réponses dans le délai"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "d31a1500000000000008": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e9756bf38baf7c065909",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Mesures"
+                        }
+                      },
+                      "Property": "Nb réponses évaluables"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "d31a1500000000000009": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c1ce4fe788aaff0679a8",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Mesures"
+                        }
+                      },
+                      "Property": "Nb réponses hors délai"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "d31a150000000000000a": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "d31a150000000000000b": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d31a15000000000000f1",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m",
+                        "Entity": "_Mesures",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 1,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "m"
+                                  }
+                                },
+                                "Property": "Nb réponses évaluables"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "0L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Mesures"
+                        }
+                      },
+                      "Property": "Nb réponses évaluables"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "7fd8a84406d1ed6b1333",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "LIEU DE LA PRESTATION"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3f56a30edf0984eeb463",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Mesures"
+                        }
+                      },
+                      "Property": "Nb réponses dans le délai"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "41ab0712862057d87394",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Mesures"
+                        }
+                      },
+                      "Property": "Nb réponses hors délai"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8d889fc45400fa2fd57b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Mesures"
+                        }
+                      },
+                      "Property": "% réponses dans le délai"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "hundredPercentStackedBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "LIEU DE LA PRESTATION"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "LIEU DE LA PRESTATION"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "d31a150000000000000c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "3763b908f6b53655a8a8",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Mesures"
+                        }
+                      },
+                      "Property": "Nb lignes sans date de réponse"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "d31a150000000000000d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "28ec1595a537f38726a7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Mesures"
+                        }
+                      },
+                      "Property": "Nb lignes dates à vérifier"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {}
+            }
+          },
+          "d31a150000000000000e": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a90d169666374244ca26",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "ID ligne besoin"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6de9e2347839d2d5942d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "DAH"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "94f69ba93cc0acaec9f8",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "Fonction / Rôle"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "367bf4e60190e368cb6b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "ENTITE"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8dff24434e14f246d9d0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "LIEU DE LA PRESTATION"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ebcaaf5b0fa6650eabd2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "Date émission jour"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5d60e7ec18d4b24505ab",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "Date réponse jour"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f3683ba2d30b97f26178",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "Échéance réponse"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0c093826882f9964746c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "Délai réponse jours ouvrés"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7b75aec8bdeda8c373b4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "Qualification délai"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e563539f3053a92be2a9",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "Anomalie dates"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Données"
+                        }
+                      },
+                      "Property": "ID ligne besoin"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

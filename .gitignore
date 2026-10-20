@@ -1,0 +1,15 @@
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Paramètres et caches locaux Power BI
+**/.pbi/
+
+# Fichiers locaux Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Livrables binaires et copie locale des données
+*.pbix
+/data/*.xlsx

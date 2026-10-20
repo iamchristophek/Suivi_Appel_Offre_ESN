@@ -1,0 +1,3711 @@
+cultureInfo fr-FR
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "donnée": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "donnée": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.dah": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "DAH"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dah": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.intitule": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "INTITULE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "intitule": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.niveau": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "NIVEAU"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "niveau": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.competences_recherchée": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "COMPETENCES RECHERCHÉES"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "competences recherchée": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "competence recherchée": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.lieu_de_la_prestation": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "LIEU DE LA PRESTATION"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "lieu de la prestation": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Lieu de prestation": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Lieu": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.date_demission": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "DATE D'EMISSION"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date d'emission": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "moment d'emission": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period d'emission": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "donnée.date_limite_reponse": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "DATE LIMITE REPONSE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date limite reponse": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment limite reponse": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "period limite reponse": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.date_de_reponse": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "DATE DE REPONSE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date de reponse": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "moment de reponse": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "period de reponse": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "donnée.contact": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "CONTACT"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "contact": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "connection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "interaction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "phone": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "telephone": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "communication": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "e-mail": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "link": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "reach": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "e mail": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.589
+			          }
+			        },
+			        {
+			          "phone number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.571
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.entite": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "ENTITE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "entite": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Entité": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.linked_in": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "LinkedIn"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "linked in": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "LinkedIn": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.email": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "Email"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "email": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "correspondence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "message": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "communication": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.fonction": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "Fonction"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fonction": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.profil_proposé": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "PROFIL PROPOSÉ"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "profil proposé": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.tj_ht_jour": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "TJ HT/JOUR"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tj ht/jour": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tj ht": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "tj ht jour": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "jour": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.statut": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "STATUT"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "statut": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.motif": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "MOTIF"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "motif": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "idea": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "topic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "treatment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "theme": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "subject": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "keynote": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "style": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "ornamentation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "logo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "design": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.fonction___rôle": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "Fonction / Rôle"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fonction / rôle": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fonction rôle": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "rôle": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.poste": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "POSTE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "poste": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "_mesure": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.column": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Column"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "column": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "pilaster": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "pier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "pillar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "post": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "support": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "stake": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "pole": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "buttress": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "underpinning": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "contribution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.nb_consultations": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Nb Consultations"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb consultations": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "consultations": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.nb_no_go": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Nb No Go"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb no go": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "go": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "no go": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "nb number go": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "number go": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "nb no energy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "nb no liveliness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "nb no enthusiasm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "nb no verve": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "nb no vigor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "no energy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "no liveliness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "no enthusiasm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "Nombre de No Go": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.no_go": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "% No Go"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% no go": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage no go": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "pct no go": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "% number go": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "% no energy": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "% no liveliness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "% no enthusiasm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "% no verve": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "% no vigor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "% no drive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "% no spirit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "Percentage de No Go": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.nb_gagné": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Nb Gagné"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb gagné": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Nombre de Gagné": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Besoins gagnés": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.gagné": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "% Gagné"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% gagné": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage gagné": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "pct gagné": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.nb_consultations_tous_statuts": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Nb Consultations tous statuts"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb consultations tous statuts": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Total des besoins": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dynamic_slicer": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dynamic Slicer"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dynamic slicer": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "slicer": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "dynamic_slicer.dynamic_slicer": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dynamic Slicer",
+			          "ConceptualProperty": "Dynamic Slicer"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dynamic slicer": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dynamic slicer name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "slicer": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "dynamic_slicer.dynamic_slicer_champs": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dynamic Slicer",
+			          "ConceptualProperty": "Dynamic Slicer Champs"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "dynamic slicer champs": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "champs": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "slicer champs": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "dynamic slicer winner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "dynamic slicer victor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "dynamic slicer titleholder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "slicer winner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "slicer victor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "slicer titleholder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dynamic slicer champion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "winner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "victor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "titleholder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "dynamic_slicer.dynamic_slicer_commande": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dynamic Slicer",
+			          "ConceptualProperty": "Dynamic Slicer Commande"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "dynamic slicer commande": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.délai_moyen_réponses_évaluables": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Délai moyen réponses évaluables"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "délai moyen réponses évaluables": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Délai moyen (jours ouvrés)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.réponses_dans_le_délai": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "% réponses dans le délai"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% réponses dans le délai": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage réponse dan le délai": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "pct réponse dan le délai": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "Réponses dans le délai (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.nb_réponses_évaluables": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Nb réponses évaluables"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb réponses évaluables": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Réponses évaluables": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.nb_réponses_hors_délai": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Nb réponses hors délai"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb réponses hors délai": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Réponses hors délai": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Hors délai": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.nb_réponses_dans_le_délai": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Nb réponses dans le délai"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb réponses dans le délai": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Dans le délai": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.nb_lignes_sans_date_de_réponse": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Nb lignes sans date de réponse"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb lignes sans date de réponse": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Sans date de réponse": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.nb_lignes_dates_à_vérifier": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Nb lignes dates à vérifier"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb lignes dates à vérifier": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Dates à vérifier": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.date_émission_jour": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "Date émission jour"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date émission jour": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "moment émission jour": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "period émission jour": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "Date d'émission": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Émission": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "donnée.ID_ligne_besoin": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "ID ligne besoin"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "ID ligne besoin": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "identification ligne besoin": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "identity ligne besoin": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "identifier ligne besoin": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "credential ligne besoin": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "N°": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.date_réponse_jour": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "Date réponse jour"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date réponse jour": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "moment réponse jour": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "period réponse jour": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "Réponse": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "donnée.échéance_réponse": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "Échéance réponse"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "échéance réponse": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "Échéance": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "donnée.délai_réponse_jours_ouvré": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "Délai réponse jours ouvrés"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "délai réponse jours ouvré": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "délai réponse jour ouvré": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "Délai (j)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.qualification_délai": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "Qualification délai"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qualification délai": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Qualification": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.anomalie_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "Anomalie dates"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "anomalie date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "anomalie moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "anomalie period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "Contrôle des dates": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.date_émission_brute": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "Date émission brute"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date émission brute": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment émission brute": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "period émission brute": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.date_réponse_brute": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "Date réponse brute"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date réponse brute": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment réponse brute": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "period réponse brute": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.contrôle_date_émission": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "Contrôle date émission"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "contrôle date émission": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "contrôle moment émission": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "contrôle period émission": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "donnée.contrôle_date_réponse": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Données",
+			          "ConceptualProperty": "Contrôle date réponse"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "contrôle date réponse": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "contrôle moment réponse": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "contrôle period réponse": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "calendrier_ouvré_france": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendrier ouvré France"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "calendrier ouvré france": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "calendrier_ouvré_france.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendrier ouvré France",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "calendrier_ouvré_france.férié_national": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendrier ouvré France",
+			          "ConceptualProperty": "Férié national"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "férié national": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "férié citizen": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "férié inhabitant": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        }
+			      ]
+			    },
+			    "calendrier_ouvré_france.fête_nationale": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendrier ouvré France",
+			          "ConceptualProperty": "Fête nationale"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "fête nationale": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "calendrier_ouvré_france.est_jour_ouvré": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendrier ouvré France",
+			          "ConceptualProperty": "Est jour ouvré"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "est jour ouvré": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "donnée_has_anomalie_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.anomalie_date": {
+			          "Target": {
+			            "Entity": "donnée.anomalie_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.anomalie_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_anomalie_dates"
+			        }
+			      ]
+			    },
+			    "donnée_has_qualification_délai": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.qualification_délai": {
+			          "Target": {
+			            "Entity": "donnée.qualification_délai"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.qualification_délai"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_qualification_délais"
+			        }
+			      ]
+			    },
+			    "donnée_has_délai_réponse_jours_ouvré": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.délai_réponse_jours_ouvré": {
+			          "Target": {
+			            "Entity": "donnée.délai_réponse_jours_ouvré"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.délai_réponse_jours_ouvré"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_délai_réponse_jours_ouvré"
+			        }
+			      ]
+			    },
+			    "donnée_has_échéance_réponse": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.échéance_réponse": {
+			          "Target": {
+			            "Entity": "donnée.échéance_réponse"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.échéance_réponse"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_échéance_réponses"
+			        }
+			      ]
+			    },
+			    "donnée_has_date_réponse_jour": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.date_réponse_jour": {
+			          "Target": {
+			            "Entity": "donnée.date_réponse_jour"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.date_réponse_jour"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_date_réponse_jour"
+			        }
+			      ]
+			    },
+			    "donnée_has_date_émission_jour": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.date_émission_jour": {
+			          "Target": {
+			            "Entity": "donnée.date_émission_jour"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.date_émission_jour"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_date_émission_jour"
+			        }
+			      ]
+			    },
+			    "donnée_has_entity__mesure_nb_lignes_dates_à_vérifier": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "entity__mesure.nb_lignes_dates_à_vérifier": {
+			          "Target": {
+			            "Entity": "entity__mesure.nb_lignes_dates_à_vérifier"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.nb_lignes_dates_à_vérifier"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_nb_lignes_dates_à_vérifier"
+			        }
+			      ]
+			    },
+			    "donnée_has_entity__mesure_nb_lignes_sans_date_de_réponse": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "entity__mesure.nb_lignes_sans_date_de_réponse": {
+			          "Target": {
+			            "Entity": "entity__mesure.nb_lignes_sans_date_de_réponse"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.nb_lignes_sans_date_de_réponse"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_nb_lignes_sans_date_de_réponse"
+			        }
+			      ]
+			    },
+			    "donnée_has_entity__mesure_nb_réponses_dans_le_délai": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "entity__mesure.nb_réponses_dans_le_délai": {
+			          "Target": {
+			            "Entity": "entity__mesure.nb_réponses_dans_le_délai"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.nb_réponses_dans_le_délai"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_nb_réponses_dans_le_délai"
+			        }
+			      ]
+			    },
+			    "donnée_has_entity__mesure_nb_réponses_hors_délai": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "entity__mesure.nb_réponses_hors_délai": {
+			          "Target": {
+			            "Entity": "entity__mesure.nb_réponses_hors_délai"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.nb_réponses_hors_délai"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_nb_réponses_hors_délai"
+			        }
+			      ]
+			    },
+			    "donnée_has_entity__mesure_nb_réponses_évaluables": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "entity__mesure.nb_réponses_évaluables": {
+			          "Target": {
+			            "Entity": "entity__mesure.nb_réponses_évaluables"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.nb_réponses_évaluables"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_nb_réponses_évaluables"
+			        }
+			      ]
+			    },
+			    "donnée_has_entity__mesure_réponses_dans_le_délai": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "entity__mesure.réponses_dans_le_délai": {
+			          "Target": {
+			            "Entity": "entity__mesure.réponses_dans_le_délai"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.réponses_dans_le_délai"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have__réponses_dans_le_délai"
+			        }
+			      ]
+			    },
+			    "donnée_has_entity__mesure_délai_moyen_réponses_évaluables": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "entity__mesure.délai_moyen_réponses_évaluables": {
+			          "Target": {
+			            "Entity": "entity__mesure.délai_moyen_réponses_évaluables"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.délai_moyen_réponses_évaluables"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_délai_moyen_réponses_évaluables"
+			        }
+			      ]
+			    },
+			    "dynamic_slicer_has_dynamic_slicer": {
+			      "Binding": {
+			        "ConceptualEntity": "Dynamic Slicer"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dynamic_slicer": {
+			          "Target": {
+			            "Entity": "dynamic_slicer"
+			          }
+			        },
+			        "dynamic_slicer.dynamic_slicer": {
+			          "Target": {
+			            "Entity": "dynamic_slicer.dynamic_slicer"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dynamic_slicer"
+			            },
+			            "Object": {
+			              "Role": "dynamic_slicer.dynamic_slicer"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dynamic_slicers_have_dynamic_slicers"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "dynamic_slicer"
+			            },
+			            "Name": {
+			              "Role": "dynamic_slicer.dynamic_slicer"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dynamic_slicers_are_names_IDs_of_dynamic_slicers"
+			        }
+			      ]
+			    },
+			    "donnée_has_entity__mesure_nb_consultations_tous_statuts": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "entity__mesure.nb_consultations_tous_statuts": {
+			          "Target": {
+			            "Entity": "entity__mesure.nb_consultations_tous_statuts"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.nb_consultations_tous_statuts"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_nb_consultations_tous_statuts"
+			        }
+			      ]
+			    },
+			    "donnée_has_entity__mesure_gagné": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "entity__mesure.gagné": {
+			          "Target": {
+			            "Entity": "entity__mesure.gagné"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.gagné"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have__gagné"
+			        }
+			      ]
+			    },
+			    "donnée_has_entity__mesure_nb_gagné": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "entity__mesure.nb_gagné": {
+			          "Target": {
+			            "Entity": "entity__mesure.nb_gagné"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.nb_gagné"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_nb_gagné"
+			        }
+			      ]
+			    },
+			    "donnée_has_entity__mesure_no_go": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "entity__mesure.no_go": {
+			          "Target": {
+			            "Entity": "entity__mesure.no_go"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.no_go"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have__no_go"
+			        }
+			      ]
+			    },
+			    "donnée_has_entity__mesure_nb_no_go": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "entity__mesure.nb_no_go": {
+			          "Target": {
+			            "Entity": "entity__mesure.nb_no_go"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.nb_no_go"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_nb_no_go"
+			        }
+			      ]
+			    },
+			    "donnée_has_entity__mesure_nb_consultations": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "entity__mesure.nb_consultations": {
+			          "Target": {
+			            "Entity": "entity__mesure.nb_consultations"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.nb_consultations"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_nb_consultations"
+			        }
+			      ]
+			    },
+			    "entity__mesure_has_column": {
+			      "Binding": {
+			        "ConceptualEntity": "_Mesures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__mesure": {
+			          "Target": {
+			            "Entity": "entity__mesure"
+			          }
+			        },
+			        "entity__mesure.column": {
+			          "Target": {
+			            "Entity": "entity__mesure.column"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__mesure"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.column"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_mesures_have_columns"
+			        }
+			      ]
+			    },
+			    "donnée_has_poste": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.poste": {
+			          "Target": {
+			            "Entity": "donnée.poste"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.poste"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_poste"
+			        }
+			      ]
+			    },
+			    "donnée_has_fonction___rôle": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.fonction___rôle": {
+			          "Target": {
+			            "Entity": "donnée.fonction___rôle"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.fonction___rôle"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_fonction___rôles"
+			        }
+			      ]
+			    },
+			    "donnée_has_motif": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.motif": {
+			          "Target": {
+			            "Entity": "donnée.motif"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.motif"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_motifs"
+			        }
+			      ]
+			    },
+			    "donnée_has_statut": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.statut": {
+			          "Target": {
+			            "Entity": "donnée.statut"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.statut"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_statuts"
+			        }
+			      ]
+			    },
+			    "donnée_has_tj_ht_jour": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.tj_ht_jour": {
+			          "Target": {
+			            "Entity": "donnée.tj_ht_jour"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.tj_ht_jour"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_tj_ht_jour"
+			        }
+			      ]
+			    },
+			    "donnée_has_profil_proposé": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.profil_proposé": {
+			          "Target": {
+			            "Entity": "donnée.profil_proposé"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.profil_proposé"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_profil_proposé"
+			        }
+			      ]
+			    },
+			    "donnée_has_fonction": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.fonction": {
+			          "Target": {
+			            "Entity": "donnée.fonction"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.fonction"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_fonctions"
+			        }
+			      ]
+			    },
+			    "donnée_has_email": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.email": {
+			          "Target": {
+			            "Entity": "donnée.email"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.email"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_emails"
+			        }
+			      ]
+			    },
+			    "donnée_has_linked_in": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.linked_in": {
+			          "Target": {
+			            "Entity": "donnée.linked_in"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.linked_in"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_linked_in"
+			        },
+			        {
+			          "Verb": {
+			            "Verbs": [
+			              {
+			                "link": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "donnée"
+			            },
+			            "PrepositionalPhrases": [
+			              {
+			                "Prepositions": [
+			                  {
+			                    "in": {
+			                      "State": "Generated"
+			                    }
+			                  }
+			                ],
+			                "Object": {
+			                  "Role": "donnée.linked_in"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.95,
+			          "ID": "données_are_linked_in_linked_in"
+			        }
+			      ]
+			    },
+			    "donnée_has_entite": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.entite": {
+			          "Target": {
+			            "Entity": "donnée.entite"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.entite"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_entites"
+			        }
+			      ]
+			    },
+			    "donnée_has_contact": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.contact": {
+			          "Target": {
+			            "Entity": "donnée.contact"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.contact"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_contacts"
+			        }
+			      ]
+			    },
+			    "donnée_has_date_de_reponse": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.date_de_reponse": {
+			          "Target": {
+			            "Entity": "donnée.date_de_reponse"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.date_de_reponse"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_date_de_reponses"
+			        }
+			      ]
+			    },
+			    "donnée_has_date_limite_reponse": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.date_limite_reponse": {
+			          "Target": {
+			            "Entity": "donnée.date_limite_reponse"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.date_limite_reponse"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_date_limite_reponses"
+			        }
+			      ]
+			    },
+			    "donnée_has_date_demission": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.date_demission": {
+			          "Target": {
+			            "Entity": "donnée.date_demission"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.date_demission"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_date_demissions"
+			        }
+			      ]
+			    },
+			    "donnée_has_lieu_de_la_prestation": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.lieu_de_la_prestation": {
+			          "Target": {
+			            "Entity": "donnée.lieu_de_la_prestation"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.lieu_de_la_prestation"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_lieu_de_la_prestations"
+			        }
+			      ]
+			    },
+			    "donnée_has_competences_recherchée": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.competences_recherchée": {
+			          "Target": {
+			            "Entity": "donnée.competences_recherchée"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.competences_recherchée"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_competences_recherchées"
+			        }
+			      ]
+			    },
+			    "donnée_has_niveau": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.niveau": {
+			          "Target": {
+			            "Entity": "donnée.niveau"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.niveau"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_niveaus"
+			        }
+			      ]
+			    },
+			    "donnée_has_intitule": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.intitule": {
+			          "Target": {
+			            "Entity": "donnée.intitule"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.intitule"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_intitule"
+			        }
+			      ]
+			    },
+			    "donnée_has_dah": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.dah": {
+			          "Target": {
+			            "Entity": "donnée.dah"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.dah"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_dahs"
+			        }
+			      ]
+			    },
+			    "dynamic_slicer_slice": {
+			      "Binding": {
+			        "ConceptualEntity": "Dynamic Slicer"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dynamic_slicer": {
+			          "Target": {
+			            "Entity": "dynamic_slicer"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "dynamic_slicer"
+			            },
+			            "Verbs": [
+			              {
+			                "slice": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "dynamic_slicers_slice"
+			        }
+			      ]
+			    },
+			    "donnée_has_date_émission_brute": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.date_émission_brute": {
+			          "Target": {
+			            "Entity": "donnée.date_émission_brute"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.date_émission_brute"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_date_émission_brutes"
+			        }
+			      ]
+			    },
+			    "donnée_has_date_réponse_brute": {
+			      "Binding": {
+			        "ConceptualEntity": "Données"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "donnée": {
+			          "Target": {
+			            "Entity": "donnée"
+			          }
+			        },
+			        "donnée.date_réponse_brute": {
+			          "Target": {
+			            "Entity": "donnée.date_réponse_brute"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "donnée"
+			            },
+			            "Object": {
+			              "Role": "donnée.date_réponse_brute"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "données_have_date_réponse_brutes"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

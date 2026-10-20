@@ -1,0 +1,90 @@
+table _Mesures
+	lineageTag: 0e7990b9-2d3c-4d10-862d-88742cad2830
+
+	measure 'Nb Consultations' = COUNTROWS('Données')
+		formatString: 0
+		lineageTag: 9777dbfb-d8a9-4dcc-bb22-0f8343294af9
+
+	measure 'Nb No Go' = CALCULATE([Nb Consultations], 'Données'[STATUT] = "No go")
+		formatString: 0
+		lineageTag: f5d9fd4f-ae0f-40e4-ba1a-0f6e069c52c8
+
+	measure '% No Go' =
+			
+			DIVIDE(
+			    [Nb No Go],
+			    [Nb Consultations tous statuts]
+			)
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: 8596f7fd-c29c-43b1-afac-285e4686d379
+
+	measure 'Nb Gagné' = CALCULATE([Nb Consultations], 'Données'[STATUT] = "Gagné")
+		formatString: 0
+		lineageTag: a9f3b90f-5dc4-410b-8c92-77c51201826e
+
+	measure '% Gagné' = DIVIDE([Nb Gagné], [Nb Consultations], 0)
+		lineageTag: ef8aefbc-1dec-4641-bf52-808e65965704
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Nb Consultations tous statuts' =
+			
+			CALCULATE(
+			    [Nb Consultations],
+			    REMOVEFILTERS('Données'[STATUT])
+			)
+		formatString: 0
+		lineageTag: 2e05870b-54fb-4075-8559-5fbe7dfd233e
+
+	measure 'Nb réponses évaluables' = COALESCE ( COUNTROWS ( FILTER ( 'Données', NOT ISBLANK ( 'Données'[Délai réponse jours ouvrés] ) ) ), 0 )
+		formatString: 0
+		displayFolder: Délais de réponse
+		lineageTag: a51da844-fcac-4385-83fa-c44f9c5115fc
+
+	measure 'Délai moyen réponses évaluables' = AVERAGE ( 'Données'[Délai réponse jours ouvrés] )
+		formatString: 0.0
+		displayFolder: Délais de réponse
+		lineageTag: d0524ac5-500a-4a76-9d00-c39662053a2b
+
+	measure 'Nb réponses dans le délai' = COALESCE ( CALCULATE ( COUNTROWS ( 'Données' ), KEEPFILTERS ( 'Données'[Qualification délai] = "Dans le délai" ) ), 0 )
+		formatString: 0
+		displayFolder: Délais de réponse
+		lineageTag: f68ed43c-5914-4d79-b586-f758a7fcf4cf
+
+	measure 'Nb réponses hors délai' = COALESCE ( CALCULATE ( COUNTROWS ( 'Données' ), KEEPFILTERS ( 'Données'[Qualification délai] = "Hors délai" ) ), 0 )
+		formatString: 0
+		displayFolder: Délais de réponse
+		lineageTag: 4fa3d59e-1396-41ed-a859-d2400e278b6d
+
+	measure '% réponses dans le délai' = DIVIDE ( [Nb réponses dans le délai], [Nb réponses évaluables] )
+		formatString: 0.0%
+		displayFolder: Délais de réponse
+		lineageTag: 306fa5be-d15d-4006-b72d-9a2f4fae84ef
+
+	measure 'Nb lignes sans date de réponse' = COALESCE ( CALCULATE ( COUNTROWS ( 'Données' ), KEEPFILTERS ( 'Données'[Contrôle date réponse] = "Absente" ) ), 0 )
+		formatString: 0
+		displayFolder: Délais de réponse
+		lineageTag: 4f8e2b35-0fd9-45a3-abe9-573ef4a6a06f
+
+	measure 'Nb lignes dates à vérifier' = COALESCE ( CALCULATE ( COUNTROWS ( 'Données' ), KEEPFILTERS ( 'Données'[Qualification délai] = "Dates à vérifier" ) ), 0 )
+		formatString: 0
+		displayFolder: Délais de réponse
+		lineageTag: e142e4b5-29d2-49bd-9821-88c391891857
+
+	column Column
+		formatString: 0
+		lineageTag: 3db14347-2a3e-4621-8404-36546b1778a6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Mesures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = a3293374417a4584b9295dd01c0405d8
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

@@ -1,0 +1,97 @@
+/// Calendrier partagé des délais et échéances ; lundi à vendredi hors 11 jours fériés nationaux français.
+table 'Calendrier ouvré France'
+	isHidden
+	lineageTag: 9e61d1dc-23ed-4a50-bf44-7a31169d50f1
+
+	column Date
+		dataType: dateTime
+		formatString: dd/MM/yyyy
+		lineageTag: 41df1908-63cb-4eb1-9635-5e5313a9424b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+	column 'Férié national'
+		dataType: boolean
+		lineageTag: c35c7f15-033d-4790-b32e-57d6a0959a92
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Férié national]
+
+	column 'Fête nationale'
+		dataType: string
+		lineageTag: a07d93aa-cf8c-498c-83a1-4bc6128eb030
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fête nationale]
+
+	/// Définition unique du jour ouvré utilisée par le délai et le cinquième jour d'échéance.
+	column 'Est jour ouvré'
+		dataType: boolean
+		lineageTag: bc986f5d-19b5-4e8b-9d52-91173b3f1b74
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Est jour ouvré]
+
+	partition 'Calendrier ouvré France' = calculated
+		mode: import
+		source =
+				VAR DatesValides =
+				    FILTER (
+				        UNION (
+				            SELECTCOLUMNS ( 'Données', "DateValide", 'Données'[DATE D'EMISSION] ),
+				            SELECTCOLUMNS ( 'Données', "DateValide", 'Données'[DATE DE REPONSE] )
+				        ),
+				        NOT ISBLANK ( [DateValide] )
+				    )
+				VAR PremiereDate = MINX ( DatesValides, [DateValide] )
+				VAR DerniereDate = MAXX ( DatesValides, [DateValide] )
+				VAR AnneeMin = IF ( ISBLANK ( PremiereDate ), YEAR ( TODAY () ), YEAR ( PremiereDate ) )
+				VAR AnneeMax = IF ( ISBLANK ( DerniereDate ), YEAR ( TODAY () ), YEAR ( DerniereDate ) ) + 1
+				VAR Feries =
+				    GENERATE (
+				        GENERATESERIES ( AnneeMin, AnneeMax, 1 ),
+				        VAR Annee = [Value]
+				        // Comput grégorien de Meeus/Jones/Butcher.
+				        VAR Cycle19 = MOD ( Annee, 19 )
+				        VAR Siecle = QUOTIENT ( Annee, 100 )
+				        VAR AnneeSiecle = MOD ( Annee, 100 )
+				        VAR Siecle4 = QUOTIENT ( Siecle, 4 )
+				        VAR SiecleReste4 = MOD ( Siecle, 4 )
+				        VAR CorrectionLune = QUOTIENT ( Siecle + 8, 25 )
+				        VAR CorrectionSiecle = QUOTIENT ( Siecle - CorrectionLune + 1, 3 )
+				        VAR Epacte = MOD ( 19 * Cycle19 + Siecle - Siecle4 - CorrectionSiecle + 15, 30 )
+				        VAR Annee4 = QUOTIENT ( AnneeSiecle, 4 )
+				        VAR AnneeReste4 = MOD ( AnneeSiecle, 4 )
+				        VAR CorrectionJour = MOD ( 32 + 2 * SiecleReste4 + 2 * Annee4 - Epacte - AnneeReste4, 7 )
+				        VAR CorrectionEpacte = QUOTIENT ( Cycle19 + 11 * Epacte + 22 * CorrectionJour, 451 )
+				        VAR BasePaques = Epacte + CorrectionJour - 7 * CorrectionEpacte + 114
+				        VAR Paques = DATE ( Annee, QUOTIENT ( BasePaques, 31 ), MOD ( BasePaques, 31 ) + 1 )
+				        RETURN
+				            UNION (
+				                ROW ( "DateFerie", DATE ( Annee, 1, 1 ), "NomFete", "Jour de l'An" ),
+				                ROW ( "DateFerie", Paques + 1, "NomFete", "Lundi de Pâques" ),
+				                ROW ( "DateFerie", DATE ( Annee, 5, 1 ), "NomFete", "Fête du Travail" ),
+				                ROW ( "DateFerie", DATE ( Annee, 5, 8 ), "NomFete", "Victoire 1945" ),
+				                ROW ( "DateFerie", Paques + 39, "NomFete", "Ascension" ),
+				                ROW ( "DateFerie", Paques + 50, "NomFete", "Lundi de Pentecôte" ),
+				                ROW ( "DateFerie", DATE ( Annee, 7, 14 ), "NomFete", "Fête nationale" ),
+				                ROW ( "DateFerie", DATE ( Annee, 8, 15 ), "NomFete", "Assomption" ),
+				                ROW ( "DateFerie", DATE ( Annee, 11, 1 ), "NomFete", "Toussaint" ),
+				                ROW ( "DateFerie", DATE ( Annee, 11, 11 ), "NomFete", "Armistice 1918" ),
+				                ROW ( "DateFerie", DATE ( Annee, 12, 25 ), "NomFete", "Noël" )
+				            )
+				    )
+				VAR AvecFeries =
+				    ADDCOLUMNS (
+				        CALENDAR ( DATE ( AnneeMin, 1, 1 ), DATE ( AnneeMax, 12, 31 ) ),
+				        "Férié national",
+				            VAR Jour = [Date]
+				            RETURN COUNTROWS ( FILTER ( Feries, [DateFerie] = Jour ) ) > 0,
+				        "Fête nationale",
+				            VAR Jour = [Date]
+				            RETURN CONCATENATEX ( FILTER ( Feries, [DateFerie] = Jour ), [NomFete], " ; " )
+				    )
+				RETURN
+				    ADDCOLUMNS ( AvecFeries, "Est jour ouvré", WEEKDAY ( [Date], 2 ) <= 5 && NOT ( [Férié national] ) )
+

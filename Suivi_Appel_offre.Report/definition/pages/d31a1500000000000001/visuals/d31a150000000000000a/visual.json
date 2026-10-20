@@ -1,0 +1,63 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "d31a150000000000000a",
+  "position": {
+    "x": 32,
+    "y": 388,
+    "z": 9000,
+    "height": 44,
+    "width": 1856,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Objectif : réponse sous 5 jours ouvrés.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#64748b"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Jours ouvrés : hors week-ends et jours fériés nationaux français. Jour d’émission exclu.",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#64748b"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

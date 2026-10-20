@@ -1,0 +1,48 @@
+table 'Dynamic Slicer'
+	lineageTag: 73e01b39-6641-47e7-936e-10174c6a06bf
+
+	column 'Dynamic Slicer'
+		lineageTag: 7f5aaccf-ec0f-4161-8f3c-c2195eae6533
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Dynamic Slicer Commande'
+
+		relatedColumnDetails
+			groupByColumn: 'Dynamic Slicer Champs'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dynamic Slicer Champs'
+		isHidden
+		lineageTag: 23e9cb96-b594-41ab-88d5-a8b6ff22f915
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Dynamic Slicer Commande'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dynamic Slicer Commande'
+		isHidden
+		formatString: 0
+		lineageTag: 883581b9-42d9-42e1-8c18-3d80da3f6985
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dynamic Slicer' = calculated
+		mode: import
+		source =
+				{
+				    ("LIEU DE LA PRESTATION", NAMEOF('Données'[LIEU DE LA PRESTATION]), 0),
+				    ("STATUT", NAMEOF('Données'[STATUT]), 1)
+				}
+
+	annotation PBI_Id = 7788c2862b974db5b977422d1198cc49
+

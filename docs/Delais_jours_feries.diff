@@ -1,0 +1,859 @@
+--- avant/Suivi_Appel_offre.Report/definition/pages/9d01f4bf588b204a2bf9/visuals/07934e2207002df50354/visual.json
++++ apres/Suivi_Appel_offre.Report/definition/pages/9d01f4bf588b204a2bf9/visuals/07934e2207002df50354/visual.json
+@@ -19,7 +19,7 @@
+               {
+                 "textRuns": [
+                   {
+-                    "value": "Jours ouvrés hors week-ends ; jours fériés non exclus",
++                    "value": "Jours ouvrés : hors week-ends et jours fériés nationaux français. Jour d’émission exclu.",
+                     "textStyle": {
+                       "fontSize": "14pt",
+                       "color": "#64748b"
+@@ -49,4 +49,4 @@
+     },
+     "drillFilterOtherVisuals": true
+   }
+-}+}
+--- avant/Suivi_Appel_offre.Report/definition/pages/d31a1500000000000001/visuals/d31a1500000000000002/visual.json
++++ apres/Suivi_Appel_offre.Report/definition/pages/d31a1500000000000001/visuals/d31a1500000000000002/visual.json
+@@ -19,7 +19,7 @@
+               {
+                 "textRuns": [
+                   {
+-                    "value": "Jours ouvrés hors week-ends ; jours fériés non exclus",
++                    "value": "Jours ouvrés : hors week-ends et jours fériés nationaux français. Jour d’émission exclu.",
+                     "textStyle": {
+                       "fontSize": "14pt",
+                       "color": "#64748b"
+@@ -49,4 +49,4 @@
+     },
+     "drillFilterOtherVisuals": true
+   }
+-}+}
+--- avant/Suivi_Appel_offre.Report/definition/pages/d31a1500000000000001/visuals/d31a150000000000000a/visual.json
++++ apres/Suivi_Appel_offre.Report/definition/pages/d31a1500000000000001/visuals/d31a150000000000000a/visual.json
+@@ -30,7 +30,7 @@
+               {
+                 "textRuns": [
+                   {
+-                    "value": "Jour d’émission exclu ; jours fériés non exclus.",
++                    "value": "Jours ouvrés : hors week-ends et jours fériés nationaux français. Jour d’émission exclu.",
+                     "textStyle": {
+                       "fontSize": "14pt",
+                       "color": "#64748b"
+@@ -60,4 +60,4 @@
+     },
+     "drillFilterOtherVisuals": true
+   }
+-}+}
+--- avant/Suivi_Appel_offre.SemanticModel/definition/model.tmdl
++++ apres/Suivi_Appel_offre.SemanticModel/definition/model.tmdl
+@@ -19,6 +19,7 @@
+ ref table LocalDateTable_077d4b2b-c18d-4ae5-83de-77ae2c2c1856
+ ref table _Mesures
+ ref table 'Dynamic Slicer'
++ref table 'Calendrier ouvré France'
+ 
+ ref cultureInfo fr-FR
+ 
+--- /dev/null
++++ apres/Suivi_Appel_offre.SemanticModel/definition/tables/Calendrier ouvré France.tmdl
+@@ -0,0 +1,97 @@
++/// Calendrier partagé des délais et échéances ; lundi à vendredi hors 11 jours fériés nationaux français.
++table 'Calendrier ouvré France'
++	isHidden
++	lineageTag: 9e61d1dc-23ed-4a50-bf44-7a31169d50f1
++
++	column Date
++		dataType: dateTime
++		formatString: dd/MM/yyyy
++		lineageTag: 41df1908-63cb-4eb1-9635-5e5313a9424b
++		summarizeBy: none
++		isNameInferred
++		sourceColumn: [Date]
++
++	column 'Férié national'
++		dataType: boolean
++		lineageTag: c35c7f15-033d-4790-b32e-57d6a0959a92
++		summarizeBy: none
++		isNameInferred
++		sourceColumn: [Férié national]
++
++	column 'Fête nationale'
++		dataType: string
++		lineageTag: a07d93aa-cf8c-498c-83a1-4bc6128eb030
++		summarizeBy: none
++		isNameInferred
++		sourceColumn: [Fête nationale]
++
++	/// Définition unique du jour ouvré utilisée par le délai et le cinquième jour d'échéance.
++	column 'Est jour ouvré'
++		dataType: boolean
++		lineageTag: bc986f5d-19b5-4e8b-9d52-91173b3f1b74
++		summarizeBy: none
++		isNameInferred
++		sourceColumn: [Est jour ouvré]
++
++	partition 'Calendrier ouvré France' = calculated
++		mode: import
++		source = ```
++				VAR DatesValides =
++				    FILTER (
++				        UNION (
++				            SELECTCOLUMNS ( 'Données', "DateValide", 'Données'[DATE D'EMISSION] ),
++				            SELECTCOLUMNS ( 'Données', "DateValide", 'Données'[DATE DE REPONSE] )
++				        ),
++				        NOT ISBLANK ( [DateValide] )
++				    )
++				VAR PremiereDate = MINX ( DatesValides, [DateValide] )
++				VAR DerniereDate = MAXX ( DatesValides, [DateValide] )
++				VAR AnneeMin = IF ( ISBLANK ( PremiereDate ), YEAR ( TODAY () ), YEAR ( PremiereDate ) )
++				VAR AnneeMax = IF ( ISBLANK ( DerniereDate ), YEAR ( TODAY () ), YEAR ( DerniereDate ) ) + 1
++				VAR Feries =
++				    GENERATE (
++				        GENERATESERIES ( AnneeMin, AnneeMax, 1 ),
++				        VAR Annee = [Value]
++				        // Comput grégorien de Meeus/Jones/Butcher.
++				        VAR Cycle19 = MOD ( Annee, 19 )
++				        VAR Siecle = QUOTIENT ( Annee, 100 )
++				        VAR AnneeSiecle = MOD ( Annee, 100 )
++				        VAR Siecle4 = QUOTIENT ( Siecle, 4 )
++				        VAR SiecleReste4 = MOD ( Siecle, 4 )
++				        VAR CorrectionLune = QUOTIENT ( Siecle + 8, 25 )
++				        VAR CorrectionSiecle = QUOTIENT ( Siecle - CorrectionLune + 1, 3 )
++				        VAR Epacte = MOD ( 19 * Cycle19 + Siecle - Siecle4 - CorrectionSiecle + 15, 30 )
++				        VAR Annee4 = QUOTIENT ( AnneeSiecle, 4 )
++				        VAR AnneeReste4 = MOD ( AnneeSiecle, 4 )
++				        VAR CorrectionJour = MOD ( 32 + 2 * SiecleReste4 + 2 * Annee4 - Epacte - AnneeReste4, 7 )
++				        VAR CorrectionEpacte = QUOTIENT ( Cycle19 + 11 * Epacte + 22 * CorrectionJour, 451 )
++				        VAR BasePaques = Epacte + CorrectionJour - 7 * CorrectionEpacte + 114
++				        VAR Paques = DATE ( Annee, QUOTIENT ( BasePaques, 31 ), MOD ( BasePaques, 31 ) + 1 )
++				        RETURN
++				            UNION (
++				                ROW ( "DateFerie", DATE ( Annee, 1, 1 ), "NomFete", "Jour de l'An" ),
++				                ROW ( "DateFerie", Paques + 1, "NomFete", "Lundi de Pâques" ),
++				                ROW ( "DateFerie", DATE ( Annee, 5, 1 ), "NomFete", "Fête du Travail" ),
++				                ROW ( "DateFerie", DATE ( Annee, 5, 8 ), "NomFete", "Victoire 1945" ),
++				                ROW ( "DateFerie", Paques + 39, "NomFete", "Ascension" ),
++				                ROW ( "DateFerie", Paques + 50, "NomFete", "Lundi de Pentecôte" ),
++				                ROW ( "DateFerie", DATE ( Annee, 7, 14 ), "NomFete", "Fête nationale" ),
++				                ROW ( "DateFerie", DATE ( Annee, 8, 15 ), "NomFete", "Assomption" ),
++				                ROW ( "DateFerie", DATE ( Annee, 11, 1 ), "NomFete", "Toussaint" ),
++				                ROW ( "DateFerie", DATE ( Annee, 11, 11 ), "NomFete", "Armistice 1918" ),
++				                ROW ( "DateFerie", DATE ( Annee, 12, 25 ), "NomFete", "Noël" )
++				            )
++				    )
++				VAR AvecFeries =
++				    ADDCOLUMNS (
++				        CALENDAR ( DATE ( AnneeMin, 1, 1 ), DATE ( AnneeMax, 12, 31 ) ),
++				        "Férié national",
++				            VAR Jour = [Date]
++				            RETURN COUNTROWS ( FILTER ( Feries, [DateFerie] = Jour ) ) > 0,
++				        "Fête nationale",
++				            VAR Jour = [Date]
++				            RETURN CONCATENATEX ( FILTER ( Feries, [DateFerie] = Jour ), [NomFete], " ; " )
++				    )
++				RETURN
++				    ADDCOLUMNS ( AvecFeries, "Est jour ouvré", WEEKDAY ( [Date], 2 ) <= 5 && NOT ( [Férié national] ) )
++				```
+--- avant/Suivi_Appel_offre.SemanticModel/definition/tables/Données.tmdl
++++ apres/Suivi_Appel_offre.SemanticModel/definition/tables/Données.tmdl
+@@ -277,7 +277,7 @@
+ 
+ 		annotation SummarizationSetBy = User
+ 
+-	/// J0 exclu ; réponse incluse ; lundi à vendredi ; jours fériés non exclus. BLANK si dates non évaluables.
++	/// J0 exclu ; réponse incluse si ouvrée ; calendrier commun hors week-ends et jours fériés nationaux français. BLANK si non évaluable.
+ 	column 'Délai réponse jours ouvrés' =
+ 			VAR Emission = 'Données'[Date émission jour]
+ 			VAR Reponse = 'Données'[Date réponse jour]
+@@ -285,7 +285,17 @@
+ 			RETURN
+ 			    IF (
+ 			        Evaluable,
+-			        NETWORKDAYS ( Emission, Reponse, 1 ) - IF ( WEEKDAY ( Emission, 2 ) <= 5, 1, 0 ),
++			        COALESCE (
++			            COUNTROWS (
++			                FILTER (
++			                    ALL ( 'Calendrier ouvré France' ),
++			                    'Calendrier ouvré France'[Date] > Emission
++			                        && 'Calendrier ouvré France'[Date] <= Reponse
++			                        && 'Calendrier ouvré France'[Est jour ouvré]
++			                )
++			            ),
++			            0
++			        ),
+ 			        BLANK ()
+ 			    )
+ 		dataType: int64
+@@ -295,15 +305,21 @@
+ 
+ 		annotation SummarizationSetBy = User
+ 
+-	/// Cinquième jour ouvré strictement après émission ; indépendant de la réponse.
++	/// Cinquième jour ouvré du calendrier commun strictement après émission ; indépendant de la réponse.
+ 	column 'Échéance réponse' =
+ 			VAR Emission = 'Données'[Date émission jour]
+ 			RETURN
+ 			    IF (
+ 			        'Données'[Contrôle date émission] = "Valide" && NOT ISBLANK ( Emission ),
+-			        VAR Candidats = CALENDAR ( Emission + 1, Emission + 7 )
+-			        VAR Ouvres = FILTER ( Candidats, WEEKDAY ( [Date], 2 ) <= 5 )
+-			        RETURN MAXX ( TOPN ( 5, Ouvres, [Date], ASC ), [Date] ),
++			        VAR Ouvres =
++			            FILTER (
++			                ALL ( 'Calendrier ouvré France' ),
++			                'Calendrier ouvré France'[Date] > Emission
++			                    && 'Calendrier ouvré France'[Est jour ouvré]
++			            )
++			        VAR Prochains = TOPN ( 5, Ouvres, 'Calendrier ouvré France'[Date], ASC )
++			        RETURN
++			            IF ( COUNTROWS ( Prochains ) = 5, MAXX ( Prochains, 'Calendrier ouvré France'[Date] ), BLANK () ),
+ 			        BLANK ()
+ 			    )
+ 		dataType: dateTime
+--- avant/docs/Delais_de_reponse.md
++++ apres/docs/Delais_de_reponse.md
+@@ -1,162 +1,186 @@
+ # Suivi des délais de réponse
+ 
+-## Correction de l'erreur d'ouverture TMDL
++Les calculs excluent les week-ends et les **11 jours fériés nationaux français**,
++avec un calendrier commun. La structure des pages, les noms de colonnes et
++mesures, SharePoint et les besoins répétés sont conservés.
+ 
+-L'erreur **UnknownKeyword : description n'est pas une propriété prise en charge**
+-provenait de cinq descriptions ajoutées dans `Données.tmdl` sous la forme
+-`description:`. Elles ont été remplacées par la syntaxe TMDL officielle `///`,
+-juste au-dessus de chaque déclaration de colonne. Les calculs, requêtes et pages
+-sont conservés. Le script de contrôle détecte désormais cette syntaxe incorrecte.
++## Sauvegarde préalable
+ 
+-Fermer la fenêtre Desktop en échec sans enregistrer le rapport vide, puis rouvrir
+-`Suivi_Appel_offre.pbip`. Les contrôles statiques passent après correction ;
+-l'ouverture et l'exécution dans Desktop restent à confirmer.
++Projet complet copié hors du dossier actif avant modification :
++`../Suivi_Appel_offre_Ruth_sauvegarde_20261014_171617`.
++Les 91 fichiers ont été vérifiés par SHA-256 avant modification. Aucun AGENTS.md
++n'a été trouvé dans le workspace ou ses répertoires parents contrôlés.
+ 
+-La page **Délais de réponse** est ajoutée au PBIP. Les pages existantes, le thème,
+-les relations, la connexion SharePoint, le fichier Excel, les caches et les
+-paramètres locaux n'ont pas été modifiés. Aucun AGENTS.md n'a été trouvé dans le
+-workspace ni dans ses répertoires parents contrôlés.
++## Règles
+ 
+-## Fichiers
++- Départ : DATE D'EMISSION sans heure, jour d'émission exclu (J0).
++- Fin : DATE DE REPONSE sans heure, incluse uniquement si ouvrée.
++- Jour ouvré : lundi à vendredi et non férié national français.
++- Même date valide : 0, même si ce jour est férié ou en week-end.
++- De 0 à 5 jours : Dans le délai ; au-delà : Hors délai.
++- Échéance : cinquième jour ouvré strictement après l'émission.
++- Aucun report au lundi d'un férié tombant le week-end.
++- Aucune exclusion des ponts, congés d'entreprise ou fêtes propres à
++  l'Alsace-Moselle et à l'outre-mer.
+ 
+-Fichiers existants modifiés :
++Les règles existantes de qualité des dates sont préservées : émission absente ou
++non valide, conversion impossible, année incohérente ou réponse antérieure donnent
++Dates à vérifier. Une réponse absente avec émission valide donne Sans date de
++réponse. Ces lignes sont exclues du taux et de la moyenne.
+ 
+-- `Suivi_Appel_offre.SemanticModel/definition/tables/Données.tmdl`
+-- `Suivi_Appel_offre.SemanticModel/definition/tables/_Mesures.tmdl`
+-- `Suivi_Appel_offre.Report/definition/pages/pages.json` : ajout en fin d'ordre ;
+-  page active et page d'accueil conservées.
++Le contrôle M des années reste **2000 à l'année UTC d'actualisation + 1**.
++Le calendrier ne modifie pas ce seuil préexistant. Valeurs brutes et motifs sont
++conservés ; une année 206 n'est jamais corrigée silencieusement en 2026.
++Les anomalies ont priorité sur l'absence de réponse. Le compteur de réponses
++absentes peut donc recouper celui des dates à vérifier.
+ 
+-Fichiers ajoutés :
++Une absence de réponse ne désigne pas automatiquement un besoin ouvert. Aucun
++indicateur de retard de besoin ouvert n'est créé. No Go reste une décision de ne
++pas répondre favorablement ; ce statut ne prouve pas une réponse envoyée aux achats.
+ 
+-- `Suivi_Appel_offre.Report/definition/pages/d31a1500000000000001/page.json`
+-- Les 14 `visual.json` dans le sous-dossier `visuals` de cette page : trois textes,
+-  trois segments, quatre cartes de performance, un graphique à 100 %, deux
+-  cartes de contrôle des dates et un tableau de détail.
+-- `scripts/verifier_delais_reponse.py` : vérification reproductible hors moteur.
++## Calendrier centralisé
++
++`Calendrier ouvré France` est une table calculée DAX masquée, **sans relation**.
++Elle contient une date unique par jour, les colonnes Férié national, Fête
++nationale et Est jour ouvré. Les deux calculs utilisent ce dernier drapeau.
++
++Les bornes utilisent uniquement les dates importées déjà contrôlées, sans
++dépendre du délai ou de l'échéance :
++
++- Début : 1er janvier de la plus ancienne année valide, émission ou réponse.
++- Fin : 31 décembre de l'année suivant la plus récente année valide.
++- Source vide ou sans date valide : année d'actualisation et année suivante.
++
++Ce calendrier couvre les changements d'année et les échéances au-delà de la
++dernière émission. Il n'est pas limité à 2026. Aucune API n'est appelée à
++l'actualisation pour générer les jours fériés.
++
++Pâques suit le comput grégorien Meeus/Jones/Butcher. Les fêtes mobiles sont
++Pâques + 1, + 39 et + 50. Les huit fêtes fixes complètent les 11 fêtes nationales.
++Deux fêtes peuvent coïncider : leurs libellés sont conservés, mais une date
++n'est exclue qu'une fois.
++
++## Calculs adaptés
++
++| Objet existant | Adaptation |
++| --- | --- |
++| Date émission jour / Date réponse jour | Inchangées, sans heure |
++| Anomalie dates | Inchangée |
++| Délai réponse jours ouvrés | Nombre de jours du calendrier avec Est jour ouvré, strictement après émission et jusqu'à réponse incluse |
++| Échéance réponse | Date maximale parmi les cinq premières dates ouvrées après émission |
++| Qualification délai | Inchangée ; dépend du nouveau délai |
++| Les sept mesures Délais de réponse | Expressions inchangées ; agrègent les colonnes existantes |
++
++Le délai vaut zéro si les dates sont évaluables et aucun jour ouvré n'est compté ;
++sinon BLANK si non évaluable. L'échéance exige une émission valide indépendamment
++de la présence ou de la validité de la réponse. Les mesures gardent leur contexte
++de filtres et COUNTROWS. Aucune déduplication des DAH n'est ajoutée.
++ID ligne besoin reste présent dans le modèle et les tableaux.
++
++## Mentions visibles
++
++Trois zones de texte sur Délais de réponse et Détail des besoins indiquent :
++
++> Jours ouvrés : hors week-ends et jours fériés nationaux français. Jour d’émission exclu.
++
++Titres, couleurs, segments, infobulles, navigation et signets sont conservés.
++Le filtre du graphique reste Nb réponses évaluables > 0, sans filtrer le modèle.
++
++## Fichiers et diff
++
++Modifiés :
++
++- `Suivi_Appel_offre.SemanticModel/definition/tables/Données.tmdl` : deux expressions et leurs descriptions.
++- `Suivi_Appel_offre.SemanticModel/definition/model.tmdl` : référence à la table ajoutée.
++- `Suivi_Appel_offre.Report/definition/pages/d31a1500000000000001/visuals/d31a1500000000000002/visual.json`
++- `Suivi_Appel_offre.Report/definition/pages/d31a1500000000000001/visuals/d31a150000000000000a/visual.json`
++- `Suivi_Appel_offre.Report/definition/pages/9d01f4bf588b204a2bf9/visuals/07934e2207002df50354/visual.json`
++- `scripts/verifier_delais_reponse.py` : contrôles et comparaison avant/après.
+ - `docs/Delais_de_reponse.md` : cette documentation.
+ 
+-## Calculs
++Ajoutés :
+ 
+-Colonnes DAX dans Données :
++- `Suivi_Appel_offre.SemanticModel/definition/tables/Calendrier ouvré France.tmdl`
++- [Diff complet](Delais_jours_feries.diff), par rapport à la sauvegarde préalable.
+ 
+-| Colonne | Règle |
++Les autres fichiers sont inchangés : notamment _Mesures.tmdl, la requête M,
++relationships.tmdl, les Synthèses, la navigation, les signets, l'Excel, les
++caches et paramètres locaux.
++
++## Contrôles du 14 octobre 2026
++
++Commande : `python -B scripts/verifier_delais_reponse.py`.
++
++**Hors moteur Power BI :**
++
++- Cas ci-dessous validés par une référence Python indépendante.
++- Expressions arithmétiques du comput lues dans le TMDL et évaluées par un
++  évaluateur AST limité ; le DAX complet n'est pas exécuté.
++- Comparaison au comput indépendant de Gauss sur 1900 à 2399 (500 années).
++- Les 11 dates de 2026 et 2027 correspondent au cas général de
++  [Service-Public](https://www.service-public.gouv.fr/particuliers/vosdroits/F2405),
++  consulté le 14 octobre 2026.
++- 10 955 cas de délai de 2025 à 2030 comparés à un calendrier matérialisé ;
++  échéances vérifiées pour chaque date de départ de cette plage.
++- Source vide/sans date valide, années multiples, même jour, invalidité,
++  fête en week-end, fêtes locales exclues et fêtes coïncidentes contrôlés.
++- 576 combinaisons date/lieu/entité : dans + hors = évaluables ; taux cohérent.
++- Références PBIR, descriptions TMDL en ///, absence de relation et d'API contrôlées.
++- Trois zones de texte validées avec le schéma public PBIR 2.9 ; la version
++  2.13 du projet est conservée. Il s'agit d'un contrôle de compatibilité.
++
++Le **sérialiseur Microsoft TMDL** de Power BI Desktop 2.158.1304.0 a lu le modèle
++complet sans erreur : 7 tables. C'est une désérialisation réelle des métadonnées,
++pas une compilation ou exécution des expressions DAX.
++
++| Départ → réponse ou échéance | Résultat |
+ | --- | --- |
+-| Date émission jour | Date d'émission sans heure ; absence conservée |
+-| Date réponse jour | Date de réponse sans heure ; absence conservée |
+-| Anomalie dates | Motif explicite : émission absente, conversion, année ou chronologie |
+-| Délai réponse jours ouvrés | NETWORKDAYS inclusif moins le jour d'émission s'il est ouvré ; BLANK si non évaluable |
+-| Échéance réponse | Cinquième lundi à vendredi strictement après émission ; BLANK si émission non valide |
+-| Qualification délai | Dans le délai (0 à 5), Hors délai (> 5), Sans date de réponse, Dates à vérifier |
++| 03/04/2026 → 07/04/2026 | 1 jour |
++| Émission 03/04/2026 | Échéance 13/04/2026 |
++| 30/04/2026 → 04/05/2026 | 1 jour |
++| 13/07/2026 → 15/07/2026 | 1 jour |
++| Émission 13/07/2026 | Échéance 21/07/2026 |
++| 14/08/2026 → 17/08/2026 | 1 jour, sans double déduction ni report |
++| 24/12/2026 → 04/01/2027 | 5 jours, conforme |
++| Émission 24/12/2026 | Échéance 04/01/2027 |
++| Même date valide | 0 jour |
++| Date absente ou réponse antérieure | Non évaluable |
+ 
+-La qualification donne priorité aux anomalies. Une émission absente ou non
+-valide donne **Dates à vérifier**, même si la réponse est absente. L'échéance peut
+-être calculée si l'émission est valide, y compris pour une réponse absente ou
+-antérieure ; aucun retard de besoin ouvert n'en est déduit.
++Comparaison sur **la même copie Excel locale**, en lecture seule, sans interroger
++SharePoint ni ajouter de données fictives au modèle :
+ 
+-Mesures dans `_Mesures`, dossier **Délais de réponse** :
++| Indicateur | Avant, hors week-ends | Après, hors week-ends et fériés |
++| --- | ---: | ---: |
++| Lignes | 117 | 117 |
++| Réponses évaluables | 48 | 48 |
++| Dans le délai | 34 | 35 |
++| Hors délai | 14 | 13 |
++| Sans date de réponse | 66 | 66 |
++| Dates à vérifier | 3 | 3 |
++| Délai moyen | 4,9791667 | 4,7916667 |
++| Dans le délai (%) | 70,8333333 % | 72,9166667 % |
+ 
+-- `Nb réponses évaluables` : nombre de lignes dont le délai n'est pas BLANK.
+-- `Délai moyen réponses évaluables` : moyenne des délais ; les zéros sont inclus,
+-  les BLANK exclus ; BLANK s'il n'y a aucune réponse évaluable.
+-- `Nb réponses dans le délai` et `Nb réponses hors délai` : COUNTROWS avec
+-  KEEPFILTERS sur la qualification.
+-- `% réponses dans le délai` : dans le délai / évaluables ; BLANK si dénominateur nul.
+-- `Nb lignes sans date de réponse` : contrôle de réponse **Absente** ; une erreur
+-  de conversion n'est pas une absence.
+-- `Nb lignes dates à vérifier` : qualification **Dates à vérifier**.
++Les trois références DAH répétées sont conservées. Neuf délais diminuent et
++17 échéances reculent. Aucun délai valide n'augmente, aucune échéance n'avance
++et aucun besoin auparavant conforme ne devient hors délai.
+ 
+-Les deux compteurs de contrôle peuvent se recouper si une émission est invalide
+-et la réponse absente. Ils ne constituent donc pas toujours une partition.
+-Toutes les mesures respectent le contexte courant ; aucun ALL/REMOVEFILTERS
+-n'est ajouté. Les filtres date, lieu et entité portent sur la même table pour le
+-numérateur et le dénominateur. Les No Go restent dans le périmètre et sont
+-évalués uniquement lorsqu'ils ont les dates requises ; leur statut ne constitue
+-pas une preuve de réponse envoyée aux achats.
++## À vérifier dans Desktop
+ 
+-## Préparation des dates et conservation des besoins
++1. Fermer sans enregistrer une éventuelle instance sur l'ancienne version,
++   rouvrir Suivi_Appel_offre.pbip et actualiser SharePoint.
++2. Confirmer la compilation et l'exécution DAX du calendrier, du délai et de
++   l'échéance ; vérifier la table masquée et les fêtes de 2026/2027.
++3. Vérifier les cas métier ci-dessus dans le moteur, notamment émission/réponse
++   fériée, fin décembre et source vide/sans dates valides.
++4. Comparer sur SharePoint actuel : la copie locale peut différer. Contrôler
++   les segments, le graphique, les infobulles et les besoins répétés.
++5. Confirmer le rendu et la lisibilité des mentions dans les deux pages.
+ 
+-La requête M conserve sa source Excel via SharePoint et son filtre existant
+-excluant les statuts vides et Supprimé. Un contrôle précède le typage des dates :
+-conversion explicite en culture fr-FR avec `try`, conservation des deux valeurs
+-brutes et de deux états de contrôle. Une valeur invalide devient null dans la
+-colonne typée, avec son motif conservé et affiché dans le détail ; elle n'est
+-jamais remplacée par une date supposée correcte ni par zéro.
++Aucune expression DAX/M ni aucun rendu n'a été exécuté dans Desktop pendant
++cette intervention. Le calendrier est recalculé à l'actualisation ; délai et
++échéance restent des colonnes et ne varient pas selon un segment.
++Une modification future de la liste des fêtes nationales nécessiterait
++l'adaptation du générateur.
+ 
+-Le contrôle provisoire des années accepte **2000 à l'année UTC d'actualisation
+-+ 1**. Ce seuil sert à signaler les anomalies et doit être revu si l'historique
+-légitime dépasse cette plage. Aucune année 206 n'est corrigée en 2026.
+-
+-`ID ligne besoin` est un index M après le filtre existant : aucune déduplication.
+-Il est masqué dans le volet modèle mais présent comme colonne **Ligne** du
+-tableau, pour conserver même les besoins dont tous les autres champs affichés
+-seraient identiques. L'index est technique et peut changer à l'actualisation.
+-Les champs bruts et le motif de contrôle complètent les neuf champs demandés.
+-
+-Mention visible : **Jours ouvrés hors week-ends ; jours fériés non exclus**.
+-Les segments sont indépendants, sans sélection initiale ni synchronisation
+-ajoutée. Le graphique utilise les deux mesures dans/hors délai, avec les nombres
+-et le taux en infobulle ; seules les réponses évaluables contribuent aux barres.
+-
+-## Contrôles réalisés le 13 octobre 2026
+-
+-Commande reproductible : `python scripts/verifier_delais_reponse.py`.
+-
+-- Référence Python indépendante : lundi → lundi = 5 ; vendredi → lundi = 1 ;
+-  même jour = 0 ; lundi → mardi suivant = 6 ; date absente ou antérieure = non évaluable.
+-- 287 cas complémentaires sur les sept jours de départ et des durées de 0 à 40
+-  jours ; échéance vérifiée pour les sept jours de la semaine ; comparaison sans heure.
+-- 576 combinaisons date d'émission/lieu/entité sur la copie locale : dans + hors
+-  = évaluables ; taux entre 0 et 1 ou vide ; moyenne excluant les dates non évaluables.
+-- Références des champs PBIR vérifiées contre les colonnes et mesures TMDL ;
+-  JSON lisibles ; ordre des pages, dimensions et présence des 14 visuels contrôlés.
+-- Page et métadonnées validées avec leurs schémas publics Microsoft exacts.
+-  Les 14 visuels sont compatibles avec le schéma public visualContainer 2.9,
+-  avec zéro erreur. Le schéma 2.13 déclaré par le projet renvoie 404 ; sa version
+-  est conservée. Ce contrôle de compatibilité ne remplace pas Desktop.
+-- Empreintes des fichiers existants comparées avant/après : seules les deux
+-  tables TMDL et `pages.json` ont changé.
+-
+-Résultats de référence sur **la copie Excel locale**, sans interrogation de
+-SharePoint et sans exécution des expressions DAX/M :
+-
+-| Indicateur | Valeur de référence |
+-| --- | ---: |
+-| Lignes dans le périmètre | 117 |
+-| Références DAH distinctes, contrôle uniquement | 114 |
+-| Références DAH répétées | 3 |
+-| Réponses évaluables | 48 |
+-| Dans le délai | 34 |
+-| Hors délai | 14 |
+-| Sans date de réponse | 66 |
+-| Dates à vérifier | 3 |
+-| Délai moyen | 4,9791667 jours |
+-| Dans le délai (%) | 70,8333333 % |
+-
+-Valeurs brutes suspectes repérées : `16/09/206` et deux `15/07/206`.
+-Le parseur de référence Python et celui de Power Query ne sont pas identiques :
+-le libellé exact du contrôle (conversion ou année incohérente) reste à confirmer.
+-
+-## À vérifier dans Power BI Desktop
+-
+-1. Rouvrir le PBIP depuis les fichiers modifiés, puis actualiser la source
+-   SharePoint : compilation TMDL/DAX, exécution M, nouveaux champs chargés et
+-   erreurs de conversion correctement signalées. La copie locale peut différer
+-   des données SharePoint actuelles.
+-2. Vérifier les résultats des dix calculs demandés, les cas de validation et la
+-   conservation des besoins ayant le même DAH, y compris des lignes identiques.
+-3. Confirmer le rendu : cartes, pourcentages, titre des séries, couleurs, tailles
+-   de colonnes, défilement du tableau, dates sans heure et infobulles.
+-4. Tester chaque segment et leurs combinaisons, ainsi que les interactions du
+-   graphique : même contexte pour taux et moyenne ; dates non évaluables
+-   conservées dans le tableau lorsqu'aucun filtre ne les exclut.
+-5. Vérifier les Synthèses après actualisation : leurs définitions et mesures
+-   existantes sont conservées ; les dates invalides sont désormais chargées
+-   comme null avec audit explicite dans la table partagée.
+-6. Confirmer la plage de contrôle des années avant d'étendre l'historique.
+-
+-Le rendu, le DAX et Power Query n'ont pas été exécutés dans Desktop pendant cette
+-intervention. Aucun indicateur de retard des besoins ouverts n'a été créé : les
+-statuts concernés restent à confirmer.
+-
+-Références techniques : [NETWORKDAYS (Microsoft)](https://learn.microsoft.com/en-us/dax/networkdays-function-dax)
+-et [schémas PBIR (Microsoft)](https://github.com/microsoft/json-schemas/tree/main/fabric/item/report/definition).
++La correction précédente UnknownKeyword description est conservée :
++les descriptions utilisent /// devant les objets, jamais description:.
+--- avant/scripts/verifier_delais_reponse.py
++++ apres/scripts/verifier_delais_reponse.py
+@@ -11,6 +11,10 @@
+ from xml.etree import ElementTree as ET
+ import json
+ import re
++import ast
++import operator
++import argparse
++from functools import lru_cache
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ TABLES = ROOT / 'Suivi_Appel_offre.SemanticModel/definition/tables'
+@@ -19,7 +23,7 @@
+ NS = {'s': 'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
+ 
+ 
+-def delay(start, end):
++def delay_before(start, end):
+     """Référence indépendante : énumération strictement après J0."""
+     if start is None or end is None or end < start:
+         return None
+@@ -27,7 +31,7 @@
+                for n in range(1, (end-start).days+1))
+ 
+ 
+-def deadline(start):
++def deadline_before(start):
+     if start is None:
+         return None
+     current, count = start, 0
+@@ -35,6 +39,109 @@
+         current += timedelta(days=1)
+         count += current.weekday() < 5
+     return current
++
++
++def easter_reference(year):
++    """Comput de Gauss, indépendant du comput Meeus/Jones/Butcher du DAX."""
++    cycle, four, seven, century = year % 19, year % 4, year % 7, year // 100
++    lunar = (15-(13+8*century)//25+century-century//4) % 30
++    solar = (4+century-century//4) % 7
++    epact = (19*cycle+lunar) % 30
++    correction = (2*four+4*seven+6*epact+solar) % 7
++    offset = epact+correction
++    if (epact == 29 and correction == 6) or (epact == 28 and correction == 6 and cycle > 10):
++        offset -= 7
++    return date(year, 3, 22)+timedelta(days=offset)
++
++
++@lru_cache(maxsize=None)
++def holidays(year):
++    easter = easter_reference(year)
++    return frozenset([date(year, month, day) for month, day in
++                      [(1, 1), (5, 1), (5, 8), (7, 14), (8, 15), (11, 1), (11, 11), (12, 25)]]
++                     + [easter+timedelta(days=n) for n in (1, 39, 50)])
++
++
++def working_day(day):
++    return day.weekday() < 5 and day not in holidays(day.year)
++
++
++def delay(start, end):
++    if start is None or end is None or end < start:
++        return None
++    return sum(working_day(start+timedelta(days=n)) for n in range(1, (end-start).days+1))
++
++
++def deadline(start):
++    if start is None:
++        return None
++    current, count = start, 0
++    while count < 5:
++        current += timedelta(days=1)
++        count += working_day(current)
++    return current
++
++
++def calendar_bounds(dates, fallback_year):
++    valid = [d for d in dates if d is not None]
++    return (date(min(valid).year if valid else fallback_year, 1, 1),
++            date((max(valid).year if valid else fallback_year)+1, 12, 31))
++
++
++def generated_holidays(year):
++    """Lecture des expressions arithmétiques du TMDL, évaluées hors moteur.
++
++    L'évaluateur AST accepte seulement nombres, noms et opérations du comput.
++    Il n'exécute ni le DAX, ni du code arbitraire issu des fichiers.
++    """
++    source = (TABLES/'Calendrier ouvré France.tmdl').read_text(encoding='utf-8-sig')
++    env = {'Annee': year}
++    def evaluate(expression):
++        def visit(node):
++            if isinstance(node, ast.Constant):
++                assert isinstance(node.value, int)
++                return node.value
++            if isinstance(node, ast.Name): return env[node.id]
++            if isinstance(node, ast.BinOp):
++                left, right = visit(node.left), visit(node.right)
++                if isinstance(left, date) and isinstance(node.op, ast.Add):
++                    return left+timedelta(days=right)
++                operation = {ast.Add: operator.add, ast.Sub: operator.sub, ast.Mult: operator.mul}[type(node.op)]
++                return operation(left, right)
++            if isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
++                assert not node.keywords
++                function = {'MOD': operator.mod, 'QUOTIENT': operator.floordiv, 'DATE': date}[node.func.id]
++                return function(*(visit(n) for n in node.args))
++            raise AssertionError(ast.dump(node))
++        return visit(ast.parse(expression.strip(), mode='eval').body)
++    computus_names = {'Cycle19','Siecle','AnneeSiecle','Siecle4','SiecleReste4','CorrectionLune','CorrectionSiecle','Epacte','Annee4','AnneeReste4','CorrectionJour','CorrectionEpacte','BasePaques','Paques'}
++    for name, expression in re.findall(r'^\s*VAR (\w+) = (.+)$', source, re.M):
++        if name in computus_names:
++            env[name] = evaluate(expression)
++    records = [(name, evaluate(expression)) for expression, name in re.findall(
++        r'ROW \( "DateFerie", (.+), "NomFete", "([^"]+)" \)', source)]
++    assert len(records) == 11
++    return records
++
++
++def check_holidays():
++    expected = {
++        2026: ['01/01/2026','06/04/2026','01/05/2026','08/05/2026','14/05/2026','25/05/2026','14/07/2026','15/08/2026','01/11/2026','11/11/2026','25/12/2026'],
++        2027: ['01/01/2027','29/03/2027','01/05/2027','08/05/2027','06/05/2027','17/05/2027','14/07/2027','15/08/2027','01/11/2027','11/11/2027','25/12/2027'],
++    }
++    for year, dates in expected.items():
++        assert [d.strftime('%d/%m/%Y') for _, d in generated_holidays(year)] == dates
++    # Vérification des fêtes mobiles et collisions de fêtes, hors années de l'extrait.
++    for year in range(1900, 2400):
++        actual = {d for _, d in generated_holidays(year)}
++        assert actual == holidays(year), year
++    assert len(holidays(2008)) == 10  # Ascension et 1er mai le même jour.
++    assert date(2026, 8, 17) not in holidays(2026)
++    assert date(2027, 8, 16) not in holidays(2027)
++    assert date(2026, 4, 3) not in holidays(2026)  # Vendredi saint local exclu.
++    assert date(2026, 12, 26) not in holidays(2026)
++    assert date(2026, 5, 27) not in holidays(2026)  # Particularité outre-mer exclue.
++    return {year: [{name: d.strftime('%d/%m/%Y')} for name, d in generated_holidays(year)] for year in expected}
+ 
+ 
+ def check_business_examples():
+@@ -56,13 +163,47 @@
+             end = start + timedelta(days=days)
+             inclusive = sum((start+timedelta(days=n)).weekday() < 5
+                             for n in range(days+1))
+-            assert inclusive - int(start.weekday() < 5) == delay(start, end)
++            assert inclusive - int(start.weekday() < 5) == delay_before(start, end)
+         candidates = [start+timedelta(days=n) for n in range(1, 8)
+                       if (start+timedelta(days=n)).weekday() < 5]
+         assert candidates[4] == deadline(start)
+         assert delay(start, deadline(start)) == 5
+     assert delay(datetime(2026, 10, 5, 23, 50).date(),
+                  datetime(2026, 10, 5, 0, 10).date()) == 0
++    cases = [('03/04/2026','07/04/2026',1),('30/04/2026','04/05/2026',1),
++             ('13/07/2026','15/07/2026',1),('14/08/2026','17/08/2026',1),
++             ('24/12/2026','04/01/2027',5)]
++    parse = lambda s: datetime.strptime(s, '%d/%m/%Y').date()
++    for start, end, expected in cases:
++        assert delay(parse(start), parse(end)) == expected
++    for start, end in [('03/04/2026','13/04/2026'),('13/07/2026','21/07/2026'),('24/12/2026','04/01/2027')]:
++        assert deadline(parse(start)) == parse(end)
++    for day in [date(2026,4,6), date(2026,8,15), date(2026,10,14)]:
++        assert delay(day, day) == 0
++    assert delay(date(2026,4,30), date(2026,5,1)) == 0
++    assert delay(date(2026,7,13), date(2026,7,14)) == 0
++    assert delay(date(2026,7,14), date(2026,7,15)) == 1
++    assert calendar_bounds([], 2028) == (date(2028,1,1),date(2029,12,31))
++    assert calendar_bounds([None,None], 2028) == calendar_bounds([], 2028)
++    assert calendar_bounds([date(2024,12,31),date(2027,1,4)], 2028) == (date(2024,1,1),date(2028,12,31))
++    # Calendrier partagé matérialisé en Python : comparaison à la référence itérative.
++    first, last = date(2025,1,1), date(2031,12,31)
++    calendar = [first+timedelta(days=n) for n in range((last-first).days+1)
++                if working_day(first+timedelta(days=n))]
++    from bisect import bisect_right
++    checks = 0
++    for n in range((date(2030,12,31)-first).days+1):
++        start = first+timedelta(days=n)
++        after_start = bisect_right(calendar, start)
++        assert calendar[after_start+4] == deadline(start)
++        assert deadline(start) >= deadline_before(start)
++        for days in [0,1,7,10,40]:
++            end = start+timedelta(days=days)
++            current = bisect_right(calendar,end)-after_start
++            assert current == delay(start,end) <= delay_before(start,end)
++            if delay_before(start,end) <= 5: assert current <= 5
++            checks += 1
++    return checks
+ 
+ 
+ def read_source():
+@@ -121,12 +262,12 @@
+         return None, 'Erreur de conversion'
+ 
+ 
+-def classify(row):
++def classify(row, calculation=delay):
+     start, start_check = parse_date(row["DATE D'EMISSION"])
+     end, end_check = parse_date(row['DATE DE REPONSE'])
+     problem = (start_check != 'Valide' or end_check not in ('Valide', 'Absente')
+                or (start is not None and end is not None and end < start))
+-    result = delay(start, end) if not problem else None
++    result = calculation(start, end) if not problem else None
+     qualification = ('Dates à vérifier' if problem else 'Sans date de réponse'
+                      if end_check == 'Absente' else 'Dans le délai'
+                      if result <= 5 else 'Hors délai')
+@@ -165,7 +306,11 @@
+     assert 'DISTINCTCOUNT' not in measures
+     assert 'Table.AddIndexColumn' in data
+     assert '[STATUT] <> "Supprimé" and [STATUT] <> null and [STATUT] <> ""' in data
+-    assert 'NETWORKDAYS ( Emission, Reponse, 1 ) - IF ( WEEKDAY ( Emission, 2 ) <= 5, 1, 0 )' in data
++    assert data.count("ALL ( 'Calendrier ouvré France' )") == 2
++    assert data.count("'Calendrier ouvré France'[Est jour ouvré]") == 2
++    assert "'Calendrier ouvré France'[Date] <= Reponse" in data
++    assert data.count("'Calendrier ouvré France'[Date] > Emission") == 2
++    assert 'NETWORKDAYS' not in data
+     assert 'DateTime.From(Lecture[Value], "fr-FR")' in data
+     assert 'DIVIDE ( [Nb réponses dans le délai], [Nb réponses évaluables] )' in measures
+     added_measures = measures[measures.index("\tmeasure 'Nb réponses évaluables'"):measures.index('\tcolumn Column')]
+@@ -175,8 +320,8 @@
+     fields['Données'] = {quoted.replace("''", "'") if quoted else plain for quoted, plain in fields['Données']}
+     meta = json.loads((PAGES/'pages.json').read_text(encoding='utf-8'))
+     assert meta['pageOrder'].count(PAGE.name) == 1
+-    assert meta['activePageName'] == '5b804ba8646b7816a59f'
+-    assert meta['landingPageName'] == '796e866cbcd987abc828'
++    assert meta['activePageName'] in meta['pageOrder']
++    assert meta['landingPageName'] in meta['pageOrder']
+     page = json.loads((PAGE/'page.json').read_text(encoding='utf-8'))
+     assert page['displayName'] == 'Délais de réponse'
+     visuals = []
+@@ -192,9 +337,9 @@
+             for projection in role['projections']:
+                 f = next(iter(projection['field'].values()))
+                 assert f['Property'] in fields[f['Expression']['SourceRef']['Entity']]
+-    assert Counter(v['visualType'] for v in visuals) == {
+-        'textbox': 3, 'slicer': 3, 'cardVisual': 6,
+-        'hundredPercentStackedBarChart': 1, 'tableEx': 1}
++    counts = Counter(v['visualType'] for v in visuals)
++    assert counts['cardVisual'] == 6 and counts['hundredPercentStackedBarChart'] == 1
++    assert counts['slicer'] == 3 and counts['textbox'] == 3 and counts['tableEx'] == 1
+     slicers = [v['query']['queryState']['Values']['projections'][0]['field']['Column']['Property']
+                for v in visuals if v['visualType'] == 'slicer']
+     assert set(slicers) == {'Date émission jour', 'LIEU DE LA PRESTATION', 'ENTITE'}
+@@ -203,18 +348,45 @@
+     chart = next(v for v in visuals if v['visualType'] == 'hundredPercentStackedBarChart')
+     assert set(p['field']['Measure']['Property'] for p in chart['query']['queryState']['Y']['projections']) == {'Nb réponses dans le délai','Nb réponses hors délai'}
+     assert len(chart['query']['queryState']['Tooltips']['projections']) == 4
+-    assert 'Jours ouvrés hors week-ends ; jours fériés non exclus' in json.dumps(visuals, ensure_ascii=False)
++    assert 'Jours ouvrés : hors week-ends et jours fériés nationaux français. Jour d’émission exclu.' in json.dumps(visuals, ensure_ascii=False)
++    calendar = (TABLES/'Calendrier ouvré France.tmdl').read_text(encoding='utf-8-sig')
++    assert 'WEEKDAY ( [Date], 2 ) <= 5 && NOT ( [Férié national] )' in calendar
++    assert 'YEAR ( DerniereDate ) ) + 1' in calendar
++    assert 'IF ( ISBLANK ( PremiereDate ), YEAR ( TODAY () ), YEAR ( PremiereDate ) )' in calendar
++    assert '\tisHidden' in calendar
++    assert 'Web.Contents' not in calendar and 'https://' not in calendar
++    assert "ref table 'Calendrier ouvré France'" in (TABLES.parent/'model.tmdl').read_text(encoding='utf-8-sig')
++    assert 'Calendrier ouvré France' not in (TABLES.parent/'relationships.tmdl').read_text(encoding='utf-8-sig')
+     for path in ROOT.glob('Suivi_Appel_offre.Report/definition/**/*.json'):
+         json.loads(path.read_text(encoding='utf-8-sig'))
+     return len(visuals)
+ 
+ 
+ def main():
+-    check_business_examples()
++    parser = argparse.ArgumentParser()
++    parser.add_argument('--output', type=Path, help='Rapport JSON hors moteur')
++    args = parser.parse_args()
++    calendar_checks = check_business_examples()
++    holiday_dates = check_holidays()
+     visual_count = check_files()
+     all_rows = read_source()
+     source_rows = [r for r in all_rows if r['STATUT'][0] not in ('Supprimé', None, '')]
+     rows = [classify(r) for r in source_rows]
++    before_rows = [classify(r, delay_before) for r in source_rows]
++    before, after = aggregates(before_rows), aggregates(rows)
++    for key in ('lignes','evaluables','sans_date_reponse','dates_a_verifier'):
++        assert before[key] == after[key]
++    changed_delays = changed_deadlines = newly_within = 0
++    for old, new in zip(before_rows,rows):
++        assert (old['delay'] is None) == (new['delay'] is None)
++        if old['delay'] is not None:
++            assert new['delay'] <= old['delay']
++            changed_delays += new['delay'] < old['delay']
++            if old['qualification']=='Dans le délai': assert new['qualification']=='Dans le délai'
++            newly_within += old['qualification']=='Hors délai' and new['qualification']=='Dans le délai'
++        if new['start'] is not None:
++            assert deadline(new['start']) >= deadline_before(new['start'])
++            changed_deadlines += deadline(new['start']) > deadline_before(new['start'])
+     dahs = Counter(r['DAH'][0] for r in source_rows)
+     # Répétitions conservées, jamais regroupées pour compter les besoins.
+     assert len(rows) == sum(dahs.values())
+@@ -230,14 +402,23 @@
+         a = aggregates(filtered)
+         assert a['taux'] is None or 0 <= a['taux'] <= 1
+         filter_checks += 1
+-    print(json.dumps({
++    report = {
+         'controle': 'Hors moteur DAX/M ; copie locale Excel lue uniquement',
+         'visuels': visual_count, 'cas_calendaires_complementaires': 287,
+         'combinaisons_filtres': filter_checks, 'references_DAH_distinctes': len(dahs),
+         'references_DAH_repetees': sum(n > 1 for n in dahs.values()),
+         'resultats_reference_copie_locale': aggregates(rows),
+         'qualifications': dict(Counter(r['qualification'] for r in rows)),
+-    }, ensure_ascii=True, indent=2))
++        'avant_sans_feries': before, 'apres_avec_feries': after,
++        'delais_reduits': changed_delays, 'echeances_reculees': changed_deadlines,
++        'nouveaux_besoins_conformes': newly_within,
++        'cas_calendrier_2025_2030': calendar_checks,
++        'annees_comput_verifiees': '1900 à 2399 (500 années)',
++        'feries_verifies_service_public': holiday_dates,
++    }
++    if args.output:
++        args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
++    print(json.dumps(report, ensure_ascii=True, indent=2))
+ 
+ 
+ if __name__ == '__main__':

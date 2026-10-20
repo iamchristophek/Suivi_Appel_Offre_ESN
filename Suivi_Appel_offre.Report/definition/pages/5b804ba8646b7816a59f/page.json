@@ -1,0 +1,99 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "5b804ba8646b7816a59f",
+  "displayName": " Synthèse Commerciale",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F6F9'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "displayArea": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Middle'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "cb3fca990e3fe67ec6c9",
+      "target": "73ba35cfe9f1e27e2c2b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "cb3fca990e3fe67ec6c9",
+      "target": "bfda56a909fc9ac2c3ca",
+      "type": "NoFilter"
+    },
+    {
+      "source": "cb3fca990e3fe67ec6c9",
+      "target": "067e1659fe5ad74a64b0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "cb3fca990e3fe67ec6c9",
+      "target": "7077b1b88f43f2cf3853",
+      "type": "NoFilter"
+    },
+    {
+      "source": "cb3fca990e3fe67ec6c9",
+      "target": "45eb7bf87974bb02302f",
+      "type": "NoFilter"
+    },
+    {
+      "source": "cb3fca990e3fe67ec6c9",
+      "target": "d1cd6f3f54ea0fad4798",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cb3fca990e3fe67ec6c9",
+      "target": "e50afeceaea10500d629",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cb3fca990e3fe67ec6c9",
+      "target": "deadf1642093e1c7cffe",
+      "type": "NoFilter"
+    },
+    {
+      "source": "cb3fca990e3fe67ec6c9",
+      "target": "d6cb67631840b51d14ec",
+      "type": "NoFilter"
+    },
+    {
+      "source": "cb3fca990e3fe67ec6c9",
+      "target": "78fc4b23aa7fd3a27e29",
+      "type": "NoFilter"
+    }
+  ]
+}

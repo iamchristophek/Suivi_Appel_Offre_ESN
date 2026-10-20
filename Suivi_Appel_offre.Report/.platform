@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Suivi_Appel_offre"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0a1a05ba-51e9-4a10-8dbb-801844c559a0"
+  }
+}
